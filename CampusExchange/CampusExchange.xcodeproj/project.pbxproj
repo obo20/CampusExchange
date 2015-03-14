@@ -29,6 +29,7 @@
 		CEBF66BF1AB4B166004FB37D /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66BE1AB4B166004FB37D /* ListingsViewController.swift */; };
 		CEBF66C11AB4C338004FB37D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66C01AB4C338004FB37D /* LoginViewController.swift */; };
 		CEBF66C31AB4C346004FB37D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */; };
+		CEDFD5C11AB4F8CD0008EDEC /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD5C01AB4F8CD0008EDEC /* ListingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		CEBF66BE1AB4B166004FB37D /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
 		CEBF66C01AB4C338004FB37D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CEDFD5C01AB4F8CD0008EDEC /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */,
 				CEBF66831AB3DDD5004FB37D /* Main.storyboard */,
+				CEDFD5C01AB4F8CD0008EDEC /* ListingViewController.swift */,
 				CEBF66C01AB4C338004FB37D /* LoginViewController.swift */,
 				CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */,
 				CEBF66BC1AB4B12E004FB37D /* SearchListingsViewController.swift */,
@@ -286,6 +289,7 @@
 				CEBF66C11AB4C338004FB37D /* LoginViewController.swift in Sources */,
 				CEBF667E1AB3DDD5004FB37D /* AppDelegate.swift in Sources */,
 				CEBF66BD1AB4B12E004FB37D /* SearchListingsViewController.swift in Sources */,
+				CEDFD5C11AB4F8CD0008EDEC /* ListingViewController.swift in Sources */,
 				CEBF66BF1AB4B166004FB37D /* ListingsViewController.swift in Sources */,
 				CEBF66C31AB4C346004FB37D /* SignUpViewController.swift in Sources */,
 			);
@@ -487,6 +491,7 @@
 				CEBF669B1AB3DDD5004FB37D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEBF669C1AB3DDD5004FB37D /* Build configuration list for PBXNativeTarget "CampusExchangeTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				CEBF669E1AB3DDD5004FB37D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

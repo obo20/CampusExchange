@@ -14,7 +14,7 @@ class SearchListingsViewController: UIViewController {
     @IBOutlet weak var titleField : UITextField!
     @IBOutlet weak var authorField : UITextField!
     @IBOutlet weak var ISBNField : UITextField!
-    @IBOutlet weak var courseNumberField : UITextField!
+    @IBOutlet weak var courseField : UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
