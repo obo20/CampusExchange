@@ -21,7 +21,7 @@ class SearchListingsViewController: UIViewController {
         
     }
     
-    @IBAction func search(){
-        
+    @IBAction func searchBooks(){
+        NSLog("test")
     }
 }
