@@ -8,12 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		CEBF667E1AB3DDD5004FB37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */; };
-		CEBF66801AB3DDD5004FB37D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF667F1AB3DDD5004FB37D /* FirstViewController.swift */; };
-		CEBF66821AB3DDD5004FB37D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66811AB3DDD5004FB37D /* SecondViewController.swift */; };
 		CEBF66851AB3DDD5004FB37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF66831AB3DDD5004FB37D /* Main.storyboard */; };
 		CEBF66871AB3DDD5004FB37D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBF66861AB3DDD5004FB37D /* Images.xcassets */; };
 		CEBF668A1AB3DDD5004FB37D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBF66881AB3DDD5004FB37D /* LaunchScreen.xib */; };
 		CEBF66961AB3DDD5004FB37D /* CampusExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66951AB3DDD5004FB37D /* CampusExchangeTests.swift */; };
+		CEBF66A01AB3E0FE004FB37D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF669F1AB3E0FE004FB37D /* Parse.framework */; };
+		CEBF66A21AB3E10B004FB37D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66A11AB3E10B004FB37D /* Bolts.framework */; };
+		CEBF66A51AB3E160004FB37D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66A41AB3E160004FB37D /* AudioToolbox.framework */; };
+		CEBF66A71AB3E175004FB37D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66A61AB3E175004FB37D /* CFNetwork.framework */; };
+		CEBF66A91AB3E180004FB37D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66A81AB3E180004FB37D /* CoreGraphics.framework */; };
+		CEBF66AB1AB3E18B004FB37D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66AA1AB3E18B004FB37D /* CoreLocation.framework */; };
+		CEBF66AD1AB3E195004FB37D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66AC1AB3E195004FB37D /* MobileCoreServices.framework */; };
+		CEBF66AF1AB3E19D004FB37D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66AE1AB3E19D004FB37D /* QuartzCore.framework */; };
+		CEBF66B11AB3E1A6004FB37D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66B01AB3E1A6004FB37D /* Security.framework */; };
+		CEBF66B31AB3E1AD004FB37D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66B21AB3E1AD004FB37D /* StoreKit.framework */; };
+		CEBF66B51AB3E1BA004FB37D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66B41AB3E1BA004FB37D /* SystemConfiguration.framework */; };
+		CEBF66B71AB3E1C5004FB37D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66B61AB3E1C5004FB37D /* libz.dylib */; };
+		CEBF66B91AB3E1D3004FB37D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66B81AB3E1D3004FB37D /* libsqlite3.dylib */; };
+		CEBF66BD1AB4B12E004FB37D /* SearchListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66BC1AB4B12E004FB37D /* SearchListingsViewController.swift */; };
+		CEBF66BF1AB4B166004FB37D /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66BE1AB4B166004FB37D /* ListingsViewController.swift */; };
+		CEBF66C11AB4C338004FB37D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66C01AB4C338004FB37D /* LoginViewController.swift */; };
+		CEBF66C31AB4C346004FB37D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +45,30 @@
 		CEBF66781AB3DDD5004FB37D /* CampusExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF667C1AB3DDD5004FB37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEBF667F1AB3DDD5004FB37D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		CEBF66811AB3DDD5004FB37D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		CEBF66841AB3DDD5004FB37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEBF66861AB3DDD5004FB37D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEBF66891AB3DDD5004FB37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CEBF668F1AB3DDD5004FB37D /* CampusExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CampusExchangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF66941AB3DDD5004FB37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBF66951AB3DDD5004FB37D /* CampusExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusExchangeTests.swift; sourceTree = "<group>"; };
+		CEBF669F1AB3E0FE004FB37D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		CEBF66A11AB3E10B004FB37D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		CEBF66A41AB3E160004FB37D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CEBF66A61AB3E175004FB37D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CEBF66A81AB3E180004FB37D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CEBF66AA1AB3E18B004FB37D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CEBF66AC1AB3E195004FB37D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CEBF66AE1AB3E19D004FB37D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CEBF66B01AB3E1A6004FB37D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CEBF66B21AB3E1AD004FB37D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CEBF66B41AB3E1BA004FB37D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CEBF66B61AB3E1C5004FB37D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		CEBF66B81AB3E1D3004FB37D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		CEBF66BB1AB3E501004FB37D /* CampusExchange-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CampusExchange-Bridging-Header.h"; sourceTree = "<group>"; };
+		CEBF66BC1AB4B12E004FB37D /* SearchListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListingsViewController.swift; sourceTree = "<group>"; };
+		CEBF66BE1AB4B166004FB37D /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
+		CEBF66C01AB4C338004FB37D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +76,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBF66B91AB3E1D3004FB37D /* libsqlite3.dylib in Frameworks */,
+				CEBF66B71AB3E1C5004FB37D /* libz.dylib in Frameworks */,
+				CEBF66B51AB3E1BA004FB37D /* SystemConfiguration.framework in Frameworks */,
+				CEBF66B31AB3E1AD004FB37D /* StoreKit.framework in Frameworks */,
+				CEBF66B11AB3E1A6004FB37D /* Security.framework in Frameworks */,
+				CEBF66AF1AB3E19D004FB37D /* QuartzCore.framework in Frameworks */,
+				CEBF66AD1AB3E195004FB37D /* MobileCoreServices.framework in Frameworks */,
+				CEBF66AB1AB3E18B004FB37D /* CoreLocation.framework in Frameworks */,
+				CEBF66A91AB3E180004FB37D /* CoreGraphics.framework in Frameworks */,
+				CEBF66A71AB3E175004FB37D /* CFNetwork.framework in Frameworks */,
+				CEBF66A51AB3E160004FB37D /* AudioToolbox.framework in Frameworks */,
+				CEBF66A01AB3E0FE004FB37D /* Parse.framework in Frameworks */,
+				CEBF66A21AB3E10B004FB37D /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +105,11 @@
 		CEBF666F1AB3DDD5004FB37D = {
 			isa = PBXGroup;
 			children = (
+				CEBF66BB1AB3E501004FB37D /* CampusExchange-Bridging-Header.h */,
 				CEBF667A1AB3DDD5004FB37D /* CampusExchange */,
 				CEBF66921AB3DDD5004FB37D /* CampusExchangeTests */,
 				CEBF66791AB3DDD5004FB37D /* Products */,
+				CEBF66A31AB3E123004FB37D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,9 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */,
-				CEBF667F1AB3DDD5004FB37D /* FirstViewController.swift */,
-				CEBF66811AB3DDD5004FB37D /* SecondViewController.swift */,
 				CEBF66831AB3DDD5004FB37D /* Main.storyboard */,
+				CEBF66C01AB4C338004FB37D /* LoginViewController.swift */,
+				CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */,
+				CEBF66BC1AB4B12E004FB37D /* SearchListingsViewController.swift */,
+				CEBF66BE1AB4B166004FB37D /* ListingsViewController.swift */,
 				CEBF66861AB3DDD5004FB37D /* Images.xcassets */,
 				CEBF66881AB3DDD5004FB37D /* LaunchScreen.xib */,
 				CEBF667B1AB3DDD5004FB37D /* Supporting Files */,
@@ -113,6 +161,26 @@
 				CEBF66941AB3DDD5004FB37D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CEBF66A31AB3E123004FB37D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF66B81AB3E1D3004FB37D /* libsqlite3.dylib */,
+				CEBF66B61AB3E1C5004FB37D /* libz.dylib */,
+				CEBF66B41AB3E1BA004FB37D /* SystemConfiguration.framework */,
+				CEBF66B21AB3E1AD004FB37D /* StoreKit.framework */,
+				CEBF66B01AB3E1A6004FB37D /* Security.framework */,
+				CEBF66AE1AB3E19D004FB37D /* QuartzCore.framework */,
+				CEBF66AC1AB3E195004FB37D /* MobileCoreServices.framework */,
+				CEBF66AA1AB3E18B004FB37D /* CoreLocation.framework */,
+				CEBF66A81AB3E180004FB37D /* CoreGraphics.framework */,
+				CEBF66A61AB3E175004FB37D /* CFNetwork.framework */,
+				CEBF66A41AB3E160004FB37D /* AudioToolbox.framework */,
+				CEBF669F1AB3E0FE004FB37D /* Parse.framework */,
+				CEBF66A11AB3E10B004FB37D /* Bolts.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBF66821AB3DDD5004FB37D /* SecondViewController.swift in Sources */,
+				CEBF66C11AB4C338004FB37D /* LoginViewController.swift in Sources */,
 				CEBF667E1AB3DDD5004FB37D /* AppDelegate.swift in Sources */,
-				CEBF66801AB3DDD5004FB37D /* FirstViewController.swift in Sources */,
+				CEBF66BD1AB4B12E004FB37D /* SearchListingsViewController.swift in Sources */,
+				CEBF66BF1AB4B166004FB37D /* ListingsViewController.swift in Sources */,
+				CEBF66C31AB4C346004FB37D /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +410,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CampusExchange/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +424,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CampusExchange/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
