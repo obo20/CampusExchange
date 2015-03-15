@@ -15,12 +15,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField : UITextField!
     @IBOutlet weak var passwordField : UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         var currentUser = PFUser.currentUser()
-        if currentUser != nil {
+        if (currentUser != nil) {
             // Do stuff with the user
+            println("The user is set")
             self.performSegueWithIdentifier("loginToListings", sender: nil)
         }
     }
