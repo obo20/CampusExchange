@@ -1028,6 +1028,7 @@
                         <outlet property="passwordField" destination="QMc-L8-dPP" id="Je5-y3-DpR"/>
                         <outlet property="phoneNumberField" destination="Yzq-3D-sFx" id="yDP-0X-Yrj"/>
                         <outlet property="usernameField" destination="Xde-7I-uow" id="p6m-w8-NGq"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="signUpToListings" id="E86-rS-ysR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwT-JN-B9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1052,58 +1053,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtT-B2-MoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1096" y="-648"/>
-        </scene>
-        <!--My Listings-->
-        <scene sceneID="wJG-GL-tKi">
-            <objects>
-                <viewController id="3bc-9x-ibs" customClass="ListingsViewController" customModule="CampusExchange" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tw9-iw-x0b"/>
-                        <viewControllerLayoutGuide type="bottom" id="hRl-Yi-DJh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RTf-GX-gsM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyr-Ar-I9d">
-                                <rect key="frame" x="0.0" y="72" width="110" height="54"/>
-                                <state key="normal" title="Post Listing">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="G1Y-t0-fxa" kind="show" id="DNg-rE-ddk"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Qv5-0O-K5i">
-                                <rect key="frame" x="0.0" y="115" width="428" height="436"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SwA-53-NPh">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SwA-53-NPh" id="Bsg-CK-C9M">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="122" width="400" height="629"/>
-                                </variation>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="My Listings" id="dIb-HO-REy">
-                        <barButtonItem key="backBarButtonItem" title="back" id="vVf-LH-CqE"/>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="vgW-5q-Gpn" kind="show" id="qnq-Gz-CD6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YWl-X2-hoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2029.5" y="294"/>
         </scene>
         <!--Edit Listing View Controller-->
         <scene sceneID="FPa-i0-QO3">
@@ -1599,16 +1548,52 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="3bc-9x-ibs" kind="relationship" relationship="rootViewController" id="Nis-At-QYW"/>
+                        <segue destination="5RI-2l-eoj" kind="relationship" relationship="rootViewController" id="ngU-0d-68W"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24N-3R-gxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1218" y="294"/>
         </scene>
+        <!--My Listings-->
+        <scene sceneID="rnT-51-8WB">
+            <objects>
+                <tableViewController id="5RI-2l-eoj" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ufu-fU-gtY">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myListingsCell" id="JLj-id-qP7">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JLj-id-qP7" id="eSI-zp-oM9">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5RI-2l-eoj" id="TaZ-Ug-ojW"/>
+                            <outlet property="delegate" destination="5RI-2l-eoj" id="ywT-Iz-p1P"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Listings" id="MUA-Oc-V7F">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1bM-S9-jTR"/>
+                        <barButtonItem key="rightBarButtonItem" title="Post Listing" id="LkD-PO-T1w">
+                            <connections>
+                                <segue destination="G1Y-t0-fxa" kind="show" id="bVg-Lz-8dV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1XJ-yH-X4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2100" y="294"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Search-32.png" width="32" height="32"/>
         <image name="Tails-32.png" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="E86-rS-ysR"/>
+    </inferredMetricsTieBreakers>
 </document>
