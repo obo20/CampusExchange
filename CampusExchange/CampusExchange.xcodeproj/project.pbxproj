@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE1F03A61AB4FFA20065197D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F03A51AB4FFA20065197D /* PostViewController.swift */; };
 		CE1F03A81AB512D10065197D /* EditListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F03A71AB512D10065197D /* EditListingViewController.swift */; };
+		CE1F03AD1AB515770065197D /* Search-32.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1F03AC1AB515770065197D /* Search-32.png */; };
+		CE1F03AF1AB516A80065197D /* Tails-32.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1F03AE1AB516A80065197D /* Tails-32.png */; };
 		CEBF667E1AB3DDD5004FB37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */; };
 		CEBF66851AB3DDD5004FB37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF66831AB3DDD5004FB37D /* Main.storyboard */; };
 		CEBF66871AB3DDD5004FB37D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBF66861AB3DDD5004FB37D /* Images.xcassets */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		CE1F03A51AB4FFA20065197D /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		CE1F03A71AB512D10065197D /* EditListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditListingViewController.swift; sourceTree = "<group>"; };
+		CE1F03AC1AB515770065197D /* Search-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-32.png"; sourceTree = "<group>"; };
+		CE1F03AE1AB516A80065197D /* Tails-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tails-32.png"; sourceTree = "<group>"; };
 		CEBF66781AB3DDD5004FB37D /* CampusExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF667C1AB3DDD5004FB37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1F03AB1AB514EF0065197D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F03AC1AB515770065197D /* Search-32.png */,
+				CE1F03AE1AB516A80065197D /* Tails-32.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		CEBF666F1AB3DDD5004FB37D = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +155,7 @@
 				CEBF66BE1AB4B166004FB37D /* ListingsViewController.swift */,
 				CEBF66861AB3DDD5004FB37D /* Images.xcassets */,
 				CEBF66881AB3DDD5004FB37D /* LaunchScreen.xib */,
+				CE1F03AB1AB514EF0065197D /* Images */,
 				CEBF667B1AB3DDD5004FB37D /* Supporting Files */,
 			);
 			path = CampusExchange;
@@ -272,6 +286,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1F03AF1AB516A80065197D /* Tails-32.png in Resources */,
+				CE1F03AD1AB515770065197D /* Search-32.png in Resources */,
 				CEBF66851AB3DDD5004FB37D /* Main.storyboard in Resources */,
 				CEBF668A1AB3DDD5004FB37D /* LaunchScreen.xib in Resources */,
 				CEBF66871AB3DDD5004FB37D /* Images.xcassets in Resources */,

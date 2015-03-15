@@ -388,11 +388,11 @@
             </objects>
             <point key="canvasLocation" x="-892" y="970"/>
         </scene>
-        <!--Item-->
+        <!--Search-->
         <scene sceneID="DTA-on-zUO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rcZ-TG-Hvx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="q8m-cY-2it"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="Search-32.png" id="q8m-cY-2it"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gEW-pS-xQ2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -658,11 +658,11 @@
             </objects>
             <point key="canvasLocation" x="2997" y="294"/>
         </scene>
-        <!--Item-->
+        <!--Listings-->
         <scene sceneID="HVE-RF-kpW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hhd-Ll-DQd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="a25-zp-ExM"/>
+                    <tabBarItem key="tabBarItem" title="Listings" image="Tails-32.png" id="a25-zp-ExM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kx6-ih-kcM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -678,4 +678,8 @@
             <point key="canvasLocation" x="1218" y="294"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Search-32.png" width="32" height="32"/>
+        <image name="Tails-32.png" width="32" height="32"/>
+    </resources>
 </document>
