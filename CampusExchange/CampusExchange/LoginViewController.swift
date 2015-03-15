@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         
         if (username.length == 0 || password.length == 0) {
             //either the username or password was left blank, so we need to display an alert telling the user to fill in all fields
-            var alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+            var alert = UIAlertController(title: "Missing Fields!", message: "Both your username and password are needed to log in.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
                     self.performSegueWithIdentifier("loginToListings", sender: nil)
                 }
                 else {
-                    var alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+                    var alert = UIAlertController(title: "There was an error logging in.", message: "Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }

@@ -30,7 +30,7 @@ class SignUpViewController: UIViewController {
         
         if (username.length == 0 || email.length == 0 || phoneNumber.length == 0 || password.length == 0) {
             //one of the fields was left blank, so we need to display an alert telling the user to fill in all fields
-            var alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+            var alert = UIAlertController(title: "Missing Fields!", message: "Please be sure to fill in every field to sign up.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
@@ -46,8 +46,9 @@ class SignUpViewController: UIViewController {
                 if (error == nil) {
                     self.performSegueWithIdentifier("signUpToListings", sender: nil)
                 } else {
-                    //let errorString = error.userInfo["error"] as NSString
-                    // Show the errorString somewhere and let the user try again.
+                    var alert = UIAlertController(title: "There was an error signing up.", message: "Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
             }
         }
