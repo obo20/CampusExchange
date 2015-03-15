@@ -18,6 +18,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            // Do stuff with the user
+            self.performSegueWithIdentifier("loginToListings", sender: nil)
+        }
     }
     
     @IBAction func logIn() {
@@ -37,7 +42,11 @@ class LoginViewController: UIViewController {
                     self.performSegueWithIdentifier("loginToListings", sender: nil)
                 }
                 else {
-                    var alert = UIAlertController(title: "There was an error logging in.", message: "Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
+                    var errorString = "undefined error"
+                    if let userError = error.userInfo {
+                        errorString = userError["error"] as NSString
+                    }
+                    var alert = UIAlertController(title: "There was an error logging in.", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }

@@ -46,7 +46,11 @@ class SignUpViewController: UIViewController {
                 if (error == nil) {
                     self.performSegueWithIdentifier("signUpToListings", sender: nil)
                 } else {
-                    var alert = UIAlertController(title: "There was an error signing up.", message: "Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
+                    var errorString = "undefined error"
+                    if let userError = error.userInfo {
+                        errorString = userError["error"] as NSString
+                    }
+                    var alert = UIAlertController(title: "There was an error signing up:", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }
