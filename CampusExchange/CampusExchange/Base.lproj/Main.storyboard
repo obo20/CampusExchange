@@ -1053,7 +1053,7 @@
             </objects>
             <point key="canvasLocation" x="1096" y="-648"/>
         </scene>
-        <!--Listings View Controller-->
+        <!--My Listings-->
         <scene sceneID="wJG-GL-tKi">
             <objects>
                 <viewController id="3bc-9x-ibs" customClass="ListingsViewController" customModule="CampusExchange" customModuleProvider="target" sceneMemberID="viewController">
@@ -1094,7 +1094,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dIb-HO-REy">
+                    <navigationItem key="navigationItem" title="My Listings" id="dIb-HO-REy">
                         <barButtonItem key="backBarButtonItem" title="back" id="vVf-LH-CqE"/>
                     </navigationItem>
                     <connections>
