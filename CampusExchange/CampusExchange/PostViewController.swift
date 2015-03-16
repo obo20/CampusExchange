@@ -53,9 +53,7 @@ class PostViewController: UIViewController {
                 (success: Bool, error: NSError!) -> Void in
                 if (success) {
                     // The object has been saved.
-                    
-                    // TODO: is this right?
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.navigationController?.popToRootViewControllerAnimated(true)
                     
                 } else {
                     // There was a problem, check error.description

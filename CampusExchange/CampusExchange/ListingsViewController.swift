@@ -16,6 +16,10 @@ class ListingsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         var query = PFQuery(className:"Listing")
         // Get listings originally posted with the current user's id
         query.whereKey("UserId", equalTo:PFUser.currentUser().objectId)
@@ -25,6 +29,7 @@ class ListingsViewController: UITableViewController {
             if error == nil {
                 // The find succeeded.
                 println("Successfully retrieved \(objects.count) listings.")
+                self.currentUserListings.removeAll(keepCapacity: false)
                 if let objects = objects as? [PFObject] {
                     for object in objects {
                         self.currentUserListings.append(object)
@@ -37,29 +42,6 @@ class ListingsViewController: UITableViewController {
                 println("Error: \(error) \(error.userInfo!)")
             }
         }
-        
-//        var currentUser = PFUser.currentUser()
-//        var currentUserId = currentUser.objectId
-//        var query = PFQuery(className:"Listing")
-//        query.whereKey("UserID", equalTo:currentUserId)
-//        //query.whereKey("ListingStatus", equalTo: "1")
-//        query.findObjectsInBackgroundWithBlock {
-//            (objects: [AnyObject]!, error: NSError!) -> Void in
-//            if error == nil {
-//                // The find succeeded.
-//                println("Successfully retrieved \(objects.count) scores.")
-//                // Do something with the found objects
-//                if let objects = objects as? [PFObject] {
-//                    for object in objects {
-//                        println(object.objectId)
-//                    }
-//                }
-//            }
-//            else {
-//                // Log details of the failure
-//                println("Error: \(error) \(error.userInfo!)")
-//            }
-//        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
