@@ -43,14 +43,14 @@ class SignUpViewController: UIViewController {
             
             user.signUpInBackgroundWithBlock {
                 (succeeded: Bool!, error: NSError!) -> Void in
-                if (error == nil) {
+                if (error == nil || succeeded == true) {
                     self.performSegueWithIdentifier("signUpToListings", sender: nil)
                 } else {
                     var errorString = "undefined error"
                     if let userError = error.userInfo {
                         errorString = userError["error"] as NSString
                     }
-                    var alert = UIAlertController(title: "There was an error signing up:", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
+                    var alert = UIAlertController(title: "Error:", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }

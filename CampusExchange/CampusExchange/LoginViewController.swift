@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
         var currentUser = PFUser.currentUser()
         if (currentUser != nil) {
             // Do stuff with the user
-            println("The user is set")
+            println("Logged in as \(currentUser.username)")
             self.performSegueWithIdentifier("loginToListings", sender: nil)
         }
     }
@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
                     if let userError = error.userInfo {
                         errorString = userError["error"] as NSString
                     }
-                    var alert = UIAlertController(title: "There was an error logging in.", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
+                    var alert = UIAlertController(title: "Error: ", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }
