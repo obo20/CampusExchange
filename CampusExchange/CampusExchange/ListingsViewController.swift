@@ -74,4 +74,10 @@ class ListingsViewController: UITableViewController {
         self.performSegueWithIdentifier("myListingsToEditListing", sender: nil)
     }
     
+    @IBAction func LogOut(sender: UIBarButtonItem) {
+        PFUser.logOut()
+        self.navigationController?.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    
 }
