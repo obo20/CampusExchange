@@ -66,7 +66,7 @@ class EditListingViewController: UIViewController {
                 
                 // fix for no .saveInBackground()
                 listing.saveInBackgroundWithTarget(nil, selector: nil)
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.navigationController?.popToRootViewControllerAnimated(true)
             }
         }
     }
