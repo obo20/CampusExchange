@@ -15,6 +15,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField : UITextField!
     @IBOutlet weak var passwordField : UITextField!
     
+    //sets the fields to blank after logging out
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.usernameField.text = ""
+        self.passwordField.text = ""
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         var currentUser = PFUser.currentUser()
