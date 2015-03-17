@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 import Parse
 
-class SearchListingsViewController: UIViewController {
+class SearchListingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var tableView: UITableView!
     var searchResults: [PFObject] = []
     @IBOutlet weak var titleField : UITextField!
     @IBOutlet weak var authorField : UITextField!
@@ -20,6 +21,24 @@ class SearchListingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "searchResultCell")
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.searchResults.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("searchResultCell") as UITableViewCell
+        
+        let title = searchResults[indexPath.row]["Title"] as? String
+        let price = searchResults[indexPath.row]["Price"] as? String
+        cell.textLabel?.text = "\(price!) - $\(title!)"
+        return cell
+    }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         
     }
     
@@ -30,10 +49,22 @@ class SearchListingsViewController: UIViewController {
         let course = self.courseField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         var query = PFQuery(className:"Listing")
         // Get listings originally posted with the current user's id
-        query.whereKey("Title", containsString: title)
-        query.whereKey("Author", containsString: title)
-        query.whereKey("ISBN", containsString: title)
-        query.whereKey("Course", containsString: title)
+        if(title.length > 0)
+        {
+            query.whereKey("Title", containsString: title)
+        }
+        if(author.length > 0)
+        {
+            query.whereKey("Author", containsString: author)
+        }
+        if(ISBN.length > 0)
+        {
+            query.whereKey("ISBN", containsString: ISBN)
+        }
+        if(course.length > 0)
+        {
+            query.whereKey("Course", containsString: course)
+        }
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]!, error: NSError!) -> Void in
@@ -48,7 +79,7 @@ class SearchListingsViewController: UIViewController {
                     }
                 }
                 // Reload table data after background query is done
-                //self.tableView.reloadData()
+                self.tableView.reloadData()
             } else {
                 // Log details of the failure
                 println("Error: \(error) \(error.userInfo!)")

@@ -141,7 +141,7 @@
                                 <rect key="frame" x="66" y="246" width="503" height="297"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Mjo-Rw-JkE">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultCell" id="Mjo-Rw-JkE">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mjo-Rw-JkE" id="BEh-tk-YLr">
@@ -156,6 +156,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ERo-lh-dTH" id="BNg-jK-3RQ"/>
+                                    <outlet property="delegate" destination="Cee-bl-chs" id="m0L-Lg-7BR"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -265,13 +269,14 @@
                         <outlet property="ISBNField" destination="u0C-o0-r7I" id="oyg-JN-yXW"/>
                         <outlet property="authorField" destination="nIh-9l-iuW" id="SSd-Or-3Ud"/>
                         <outlet property="courseField" destination="PdA-Df-bCt" id="1EW-md-d0N"/>
+                        <outlet property="tableView" destination="OKa-n3-yF2" id="4aE-ij-lQY"/>
                         <outlet property="titleField" destination="RTm-Kl-GZw" id="D7S-uj-rSj"/>
                         <segue destination="73r-pS-DqE" kind="show" id="5EQ-AD-FkH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H92-ct-yEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-648"/>
+            <point key="canvasLocation" x="2204" y="-830"/>
         </scene>
         <!--Listing View Controller-->
         <scene sceneID="nmR-sz-f6q">
@@ -528,7 +533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swf-dO-Gsi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2817" y="-648"/>
+            <point key="canvasLocation" x="2811" y="-830"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1065,7 +1070,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtT-B2-MoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096" y="-648"/>
+            <point key="canvasLocation" x="1614" y="-830"/>
         </scene>
         <!--Edit Listing View Controller-->
         <scene sceneID="FPa-i0-QO3">
