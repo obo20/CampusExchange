@@ -49,7 +49,7 @@ class ListingsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("myListingsCell", forIndexPath: indexPath) as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("myListingsCell", forIndexPath: indexPath) as UITableViewCell
         
         // Just testing this condition out
         if currentUserListings[indexPath.row]["ListingStatus"] as? Int != 1 {
@@ -66,7 +66,7 @@ class ListingsViewController: UITableViewController {
         if (segue.identifier == "myListingsToEditListing") {
             let editController = segue.destinationViewController as EditListingViewController
             let selectedIndex = self.tableView.indexPathForSelectedRow()?.row
-            editController.listingId = currentUserListings[selectedIndex!].objectId
+            editController.listingObject = currentUserListings[selectedIndex!]
         }
     }
     

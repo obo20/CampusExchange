@@ -19,25 +19,17 @@ class EditListingViewController: UIViewController {
     @IBOutlet weak var conditionField : UITextField!
     @IBOutlet weak var priceField : UITextField!
     
-    var listingId : String = ""
+    var listingObject : PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var query = PFQuery(className:"Listing")
-        query.getObjectInBackgroundWithId(listingId) {
-            (listing: PFObject!, error: NSError!) -> Void in
-            if error != nil {
-                println(error)
-            } else {
-                self.titleField.text = listing["Title"] as? String
-                self.authorField.text = listing["Author"] as? String
-                self.ISBNField.text = listing["ISBN"] as? String
-                self.courseField.text = listing["Course"] as? String
-                self.conditionField.text = listing["Condition"] as? String
-                self.priceField.text = listing["Price"] as? String
-            }
-        }
+        self.titleField.text = listingObject["Title"] as? String
+        self.authorField.text = listingObject["Author"] as? String
+        self.ISBNField.text = listingObject["ISBN"] as? String
+        self.courseField.text = listingObject["Course"] as? String
+        self.conditionField.text = listingObject["Condition"] as? String
+        self.priceField.text = listingObject["Price"] as? String
     }
     
     // TODO: Cancel button on edit menu
@@ -52,7 +44,7 @@ class EditListingViewController: UIViewController {
         let price = self.priceField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         
         var query = PFQuery(className:"Listing")
-        query.getObjectInBackgroundWithId(listingId) {
+        query.getObjectInBackgroundWithId(listingObject.objectId) {
             (listing: PFObject!, error: NSError!) -> Void in
             if error != nil {
                 println(error)

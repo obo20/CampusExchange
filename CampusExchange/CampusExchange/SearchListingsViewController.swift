@@ -21,25 +21,7 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "searchResultCell")
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.searchResults.count;
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("searchResultCell") as UITableViewCell
-        
-        let title = searchResults[indexPath.row]["Title"] as? String
-        let price = searchResults[indexPath.row]["Price"] as? String
-        cell.textLabel?.text = "\(price!) - $\(title!)"
-        return cell
-    }
-    
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        
     }
     
     @IBAction func searchBooks(){
@@ -87,4 +69,28 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.searchResults.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("searchResultCell") as UITableViewCell
+        
+        let title = searchResults[indexPath.row]["Title"] as? String
+        let price = searchResults[indexPath.row]["Price"] as? String
+        cell.textLabel?.text = "$\(price!) - \(title!)"
+        return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "searchToListing") {
+            let listingController = segue.destinationViewController as ListingViewController
+            let selectedIndex = self.tableView.indexPathForSelectedRow()?.row
+            listingController.listingObject = searchResults[selectedIndex!]
+        }
+    }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        self.performSegueWithIdentifier("searchToListing", sender: nil)
+    }
 }
