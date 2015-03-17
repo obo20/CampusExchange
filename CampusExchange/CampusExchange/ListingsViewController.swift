@@ -76,7 +76,7 @@ class ListingsViewController: UITableViewController {
     
     @IBAction func LogOut(sender: UIBarButtonItem) {
         PFUser.logOut()
-        self.navigationController?.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.tabBarController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
