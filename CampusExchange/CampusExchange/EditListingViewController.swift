@@ -62,4 +62,7 @@ class EditListingViewController: UIViewController {
             }
         }
     }
+    @IBAction func deleteListing(sender: UIButton) {
+        listingObject.deleteInBackgroundWithTarget(nil, selector: nil)
+    }
 }
