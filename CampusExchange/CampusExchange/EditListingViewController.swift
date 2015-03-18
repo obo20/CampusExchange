@@ -63,6 +63,12 @@ class EditListingViewController: UIViewController {
         }
     }
     @IBAction func deleteListing(sender: UIButton) {
-        listingObject.deleteInBackgroundWithTarget(nil, selector: nil)
+        var alert = UIAlertController(title: "About to delete listing!", message: "Are you sure you wish to delete this listing?", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
+            self.listingObject.deleteInBackgroundWithTarget(nil, selector: nil)
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
