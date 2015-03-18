@@ -16,6 +16,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailField : UITextField!
     @IBOutlet weak var phoneNumberField : UITextField!
     @IBOutlet weak var passwordField : UITextField!
+    @IBOutlet weak var confirmPasswordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,17 @@ class SignUpViewController: UIViewController {
         let email = self.emailField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         let phoneNumber = self.phoneNumberField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         let password = self.passwordField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
+        let confirmPassword = self.confirmPasswordField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         
-        if (username.length == 0 || email.length == 0 || phoneNumber.length == 0 || password.length == 0) {
+        if (username.length == 0 || email.length == 0 || phoneNumber.length == 0 || password.length == 0 || confirmPassword.length == 0) {
             //one of the fields was left blank, so we need to display an alert telling the user to fill in all fields
             var alert = UIAlertController(title: "Missing Fields!", message: "Please be sure to fill in every field to sign up.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else if(!(password.isEqualToString(confirmPassword)))
+        {
+            var alert = UIAlertController(title: "Passwords Don't Match!", message: "Please make sure your passwords match", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
