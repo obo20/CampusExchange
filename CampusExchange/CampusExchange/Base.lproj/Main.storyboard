@@ -392,6 +392,9 @@
                                         <include reference="1wF-D6-0js"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="contactSeller:" destination="73r-pS-DqE" eventType="touchUpInside" id="Ov2-uz-tdT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcF-dT-0Ta">
                                 <rect key="frame" x="249" y="193" width="44" height="21"/>
