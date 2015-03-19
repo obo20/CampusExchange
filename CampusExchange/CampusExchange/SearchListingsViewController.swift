@@ -33,19 +33,19 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
         // Get listings originally posted with the current user's id
         if(title.length > 0)
         {
-            query.whereKey("Title", containsString: title)
+            query.whereKey("Title", matchesRegex: title, modifiers:"i")
         }
         if(author.length > 0)
         {
-            query.whereKey("Author", containsString: author)
+            query.whereKey("Author", matchesRegex: author, modifiers:"i")
         }
         if(ISBN.length > 0)
         {
-            query.whereKey("ISBN", containsString: ISBN)
+            query.whereKey("ISBN", matchesRegex: ISBN, modifiers:"i")
         }
         if(course.length > 0)
         {
-            query.whereKey("Course", containsString: course)
+            query.whereKey("Course", matchesRegex: course, modifiers:"i")
         }
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock {
