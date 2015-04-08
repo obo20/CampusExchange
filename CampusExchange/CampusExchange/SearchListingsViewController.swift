@@ -55,6 +55,11 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
                 println("Successfully retrieved \(objects.count) listings.")
                 //clear out the results
                 self.searchResults.removeAll(keepCapacity: false)
+                if objects.count == 0 {
+                    var alert = UIAlertController(title: "Notice:", message: "Sorry, no related listings were found.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
                 if let objects = objects as? [PFObject] {
                     for object in objects {
                         self.searchResults.append(object)
