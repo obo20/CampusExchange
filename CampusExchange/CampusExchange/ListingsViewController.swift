@@ -22,13 +22,12 @@ class ListingsViewController: UITableViewController {
         super.viewDidAppear(animated)
         var query = PFQuery(className:"Listing")
         // Get listings originally posted with the current user's id
-        query.whereKey("UserId", equalTo:PFUser.currentUser().objectId)
+        query.whereKey("UserId", equalTo:PFUser.currentUser()!.objectId!)
         query.orderByDescending("createdAt")
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]!, error: NSError!) -> Void in
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 // The find succeeded.
-                println("Successfully retrieved \(objects.count) listings.")
+                println("Successfully retrieved \(objects!.count) listings.")
                 self.currentUserListings.removeAll(keepCapacity: false)
                 if let objects = objects as? [PFObject] {
                     for object in objects {
@@ -39,7 +38,7 @@ class ListingsViewController: UITableViewController {
                 self.tableView.reloadData()
             } else {
                 // Log details of the failure
-                println("Error: \(error) \(error.userInfo!)")
+                println("Error: \(error) \(error!.userInfo!)")
             }
         }
     }
@@ -49,7 +48,7 @@ class ListingsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("myListingsCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("myListingsCell", forIndexPath: indexPath) as! UITableViewCell
         
         // Just testing this condition out
         if currentUserListings[indexPath.row]["ListingStatus"] as? Int != 1 {
@@ -60,11 +59,12 @@ class ListingsViewController: UITableViewController {
         let price = currentUserListings[indexPath.row]["Price"] as? String
         cell.textLabel!.text = "\(title!) - $\(price!)"
         return cell
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "myListingsToEditListing") {
-            let editController = segue.destinationViewController as EditListingViewController
+            let editController = segue.destinationViewController as! EditListingViewController
             let selectedIndex = self.tableView.indexPathForSelectedRow()?.row
             editController.listingObject = currentUserListings[selectedIndex!]
         }

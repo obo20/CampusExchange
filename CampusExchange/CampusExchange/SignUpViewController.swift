@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        else if(!(password.isEqualToString(confirmPassword)))
+        else if(!(password.isEqualToString(confirmPassword as String)))
         {
             var alert = UIAlertController(title: "Passwords Don't Match!", message: "Please make sure your passwords match", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
@@ -44,19 +44,18 @@ class SignUpViewController: UIViewController {
         }
         else{
             var user = PFUser()
-            user.username = username
-            user.password = password
-            user.email = email
+            user.username = username as String
+            user.password = password as String
+            user.email = email as String
             user["phoneNumber"] = phoneNumber
             
-            user.signUpInBackgroundWithBlock {
-                (succeeded: Bool!, error: NSError!) -> Void in
+            user.signUpInBackgroundWithBlock { (succeeded, error) -> Void in
                 if (error == nil || succeeded == true) {
                     self.performSegueWithIdentifier("signUpToLogin", sender: nil)
                 } else {
                     var errorString = "undefined error"
-                    if let userError = error.userInfo {
-                        errorString = userError["error"] as NSString
+                    if let userError = error!.userInfo {
+                        errorString = userError["error"] as! String
                     }
                     var alert = UIAlertController(title: "Error:", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))

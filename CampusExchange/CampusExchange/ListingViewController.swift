@@ -31,24 +31,22 @@ class ListingViewController: UIViewController {
         self.priceOutlet.text = listingObject["Price"] as? String
         self.courseOutlet.text = listingObject["Course"] as? String
     }
+    
     @IBAction func contactSeller(sender: UIButton) {
         var userQuery = PFUser.query()
         var userIdForListing = listingObject["UserId"] as? String
-        userQuery.getObjectInBackgroundWithId(userIdForListing){
-            (user: PFObject!, error: NSError!) -> Void in
+        userQuery!.getObjectInBackgroundWithId(userIdForListing!, block: { (user, error) -> Void in
             if error == nil {
-                var emailAddress = user["email"] as String
-                var phoneNumber = user["phoneNumber"] as String
+                let emailAddress = user!["email"] as! String
+                let phoneNumber = user!["phoneNumber"] as! String
                 var alert = UIAlertController(title: "Contact Information", message: "Email: \(emailAddress) \n Phone: \(phoneNumber)", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
                 
             }
             else {
-                println("Error: \(error) \(error.userInfo!)")
+                println("Error: \(error) \(error!.userInfo!)")
             }
-        }
-
-        
+        })
     }
 }

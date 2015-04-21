@@ -44,23 +44,22 @@ class EditListingViewController: UIViewController {
         let price = self.priceField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         
         var query = PFQuery(className:"Listing")
-        query.getObjectInBackgroundWithId(listingObject.objectId) {
-            (listing: PFObject!, error: NSError!) -> Void in
+        query.getObjectInBackgroundWithId(listingObject.objectId!, block: { (listing, error) -> Void in
             if error != nil {
                 println(error)
             } else {
-                listing["Title"] = title
-                listing["Author"] = author
-                listing["ISBN"] = ISBN
-                listing["Course"] = course
-                listing["Condition"] = condition
-                listing["Price"] = price
+                listing!["Title"] = title
+                listing!["Author"] = author
+                listing!["ISBN"] = ISBN
+                listing!["Course"] = course
+                listing!["Condition"] = condition
+                listing!["Price"] = price
                 
                 // fix for no .saveInBackground()
-                listing.saveInBackgroundWithTarget(nil, selector: nil)
+                listing!.saveInBackgroundWithTarget(nil, selector: nil)
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }
-        }
+        })
     }
     @IBAction func deleteListing(sender: UIButton) {
         var alert = UIAlertController(title: "About to delete listing!", message: "Are you sure you wish to delete this listing?", preferredStyle: UIAlertControllerStyle.Alert)

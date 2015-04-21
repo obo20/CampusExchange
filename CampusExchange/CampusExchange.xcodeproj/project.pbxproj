@@ -16,8 +16,6 @@
 		CEBF66871AB3DDD5004FB37D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBF66861AB3DDD5004FB37D /* Images.xcassets */; };
 		CEBF668A1AB3DDD5004FB37D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBF66881AB3DDD5004FB37D /* LaunchScreen.xib */; };
 		CEBF66961AB3DDD5004FB37D /* CampusExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66951AB3DDD5004FB37D /* CampusExchangeTests.swift */; };
-		CEBF66A01AB3E0FE004FB37D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF669F1AB3E0FE004FB37D /* Parse.framework */; };
-		CEBF66A21AB3E10B004FB37D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66A11AB3E10B004FB37D /* Bolts.framework */; };
 		CEBF66A51AB3E160004FB37D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66A41AB3E160004FB37D /* AudioToolbox.framework */; };
 		CEBF66A71AB3E175004FB37D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66A61AB3E175004FB37D /* CFNetwork.framework */; };
 		CEBF66A91AB3E180004FB37D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF66A81AB3E180004FB37D /* CoreGraphics.framework */; };
@@ -34,6 +32,8 @@
 		CEBF66C11AB4C338004FB37D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66C01AB4C338004FB37D /* LoginViewController.swift */; };
 		CEBF66C31AB4C346004FB37D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */; };
 		CEDFD5C11AB4F8CD0008EDEC /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD5C01AB4F8CD0008EDEC /* ListingViewController.swift */; };
+		DA5FA5BC1AE30789009A72C9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5FA5BA1AE30789009A72C9 /* Bolts.framework */; };
+		DA5FA5BD1AE30789009A72C9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5FA5BB1AE30789009A72C9 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +60,6 @@
 		CEBF668F1AB3DDD5004FB37D /* CampusExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CampusExchangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF66941AB3DDD5004FB37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBF66951AB3DDD5004FB37D /* CampusExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusExchangeTests.swift; sourceTree = "<group>"; };
-		CEBF669F1AB3E0FE004FB37D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		CEBF66A11AB3E10B004FB37D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		CEBF66A41AB3E160004FB37D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CEBF66A61AB3E175004FB37D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		CEBF66A81AB3E180004FB37D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +77,8 @@
 		CEBF66C01AB4C338004FB37D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CEDFD5C01AB4F8CD0008EDEC /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
+		DA5FA5BA1AE30789009A72C9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		DA5FA5BB1AE30789009A72C9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,16 +89,16 @@
 				CEBF66B91AB3E1D3004FB37D /* libsqlite3.dylib in Frameworks */,
 				CEBF66B71AB3E1C5004FB37D /* libz.dylib in Frameworks */,
 				CEBF66B51AB3E1BA004FB37D /* SystemConfiguration.framework in Frameworks */,
+				DA5FA5BC1AE30789009A72C9 /* Bolts.framework in Frameworks */,
 				CEBF66B31AB3E1AD004FB37D /* StoreKit.framework in Frameworks */,
 				CEBF66B11AB3E1A6004FB37D /* Security.framework in Frameworks */,
+				DA5FA5BD1AE30789009A72C9 /* Parse.framework in Frameworks */,
 				CEBF66AF1AB3E19D004FB37D /* QuartzCore.framework in Frameworks */,
 				CEBF66AD1AB3E195004FB37D /* MobileCoreServices.framework in Frameworks */,
 				CEBF66AB1AB3E18B004FB37D /* CoreLocation.framework in Frameworks */,
 				CEBF66A91AB3E180004FB37D /* CoreGraphics.framework in Frameworks */,
 				CEBF66A71AB3E175004FB37D /* CFNetwork.framework in Frameworks */,
 				CEBF66A51AB3E160004FB37D /* AudioToolbox.framework in Frameworks */,
-				CEBF66A01AB3E0FE004FB37D /* Parse.framework in Frameworks */,
-				CEBF66A21AB3E10B004FB37D /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +191,8 @@
 			children = (
 				CEBF66B81AB3E1D3004FB37D /* libsqlite3.dylib */,
 				CEBF66B61AB3E1C5004FB37D /* libz.dylib */,
+				DA5FA5BA1AE30789009A72C9 /* Bolts.framework */,
+				DA5FA5BB1AE30789009A72C9 /* Parse.framework */,
 				CEBF66B41AB3E1BA004FB37D /* SystemConfiguration.framework */,
 				CEBF66B21AB3E1AD004FB37D /* StoreKit.framework */,
 				CEBF66B01AB3E1A6004FB37D /* Security.framework */,
@@ -200,8 +202,6 @@
 				CEBF66A81AB3E180004FB37D /* CoreGraphics.framework */,
 				CEBF66A61AB3E175004FB37D /* CFNetwork.framework */,
 				CEBF66A41AB3E160004FB37D /* AudioToolbox.framework */,
-				CEBF669F1AB3E0FE004FB37D /* Parse.framework */,
-				CEBF66A11AB3E10B004FB37D /* Bolts.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

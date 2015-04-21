@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
         var currentUser = PFUser.currentUser()
         if (currentUser != nil) {
             // Do stuff with the user
-            println("Logged in as \(currentUser.username)")
+            println("Logged in as \(currentUser!.username)")
             self.performSegueWithIdentifier("loginToListings", sender: nil)
         }
     }
@@ -43,21 +43,20 @@ class LoginViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else{
-            PFUser.logInWithUsernameInBackground(username, password:password) {
-                (user: PFUser!, error: NSError!) -> Void in
+            PFUser.logInWithUsernameInBackground(username as String, password:password as String, block: { (user, error) -> Void in
                 if (user != nil) {
                     self.performSegueWithIdentifier("loginToListings", sender: nil)
                 }
                 else {
                     var errorString = "undefined error"
-                    if let userError = error.userInfo {
-                        errorString = userError["error"] as NSString
+                    if let userError = error!.userInfo {
+                        errorString = userError["error"] as! String
                     }
                     var alert = UIAlertController(title: "Error: ", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }
-            }
+            })
         }
     }
 }

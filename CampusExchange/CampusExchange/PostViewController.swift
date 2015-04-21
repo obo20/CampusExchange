@@ -41,7 +41,7 @@ class PostViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
             var listing = PFObject(className:"Listing")
-            listing["UserId"] = PFUser.currentUser().objectId
+            listing["UserId"] = PFUser.currentUser()!.objectId
             listing["Title"] = title
             listing["Author"] = author
             listing["ISBN"] = ISBN
@@ -49,8 +49,7 @@ class PostViewController: UIViewController {
             listing["Condition"] = condition
             listing["Price"] = price
             listing["ListingStatus"] = 1
-            listing.saveInBackgroundWithBlock {
-                (success: Bool, error: NSError!) -> Void in
+            listing.saveInBackgroundWithBlock { (success, error) -> Void in
                 if (success) {
                     // The object has been saved.
                     self.navigationController?.popToRootViewControllerAnimated(true)
@@ -58,8 +57,8 @@ class PostViewController: UIViewController {
                 } else {
                     // There was a problem, check error.description
                     var errorString = "undefined error"
-                    if let userError = error.userInfo {
-                        errorString = userError["error"] as NSString
+                    if let userError = error!.userInfo {
+                        errorString = userError["error"] as! String
                     }
                     var alert = UIAlertController(title: "Error:", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))

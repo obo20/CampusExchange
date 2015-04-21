@@ -33,29 +33,28 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
         // Get listings originally posted with the current user's id
         if(title.length > 0)
         {
-            query.whereKey("Title", matchesRegex: title, modifiers:"i")
+            query.whereKey("Title", matchesRegex: title as String, modifiers:"i")
         }
         if(author.length > 0)
         {
-            query.whereKey("Author", matchesRegex: author, modifiers:"i")
+            query.whereKey("Author", matchesRegex: author as String, modifiers:"i")
         }
         if(ISBN.length > 0)
         {
-            query.whereKey("ISBN", matchesRegex: ISBN, modifiers:"i")
+            query.whereKey("ISBN", matchesRegex: ISBN as String, modifiers:"i")
         }
         if(course.length > 0)
         {
-            query.whereKey("Course", matchesRegex: course, modifiers:"i")
+            query.whereKey("Course", matchesRegex: course as String, modifiers:"i")
         }
         query.orderByDescending("createdAt")
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]!, error: NSError!) -> Void in
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 // The find succeeded.
-                println("Successfully retrieved \(objects.count) listings.")
+                println("Successfully retrieved \(objects!.count) listings.")
                 //clear out the results
                 self.searchResults.removeAll(keepCapacity: false)
-                if objects.count == 0 {
+                if objects!.count == 0 {
                     var alert = UIAlertController(title: "Notice:", message: "Sorry, no related listings were found.", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
@@ -69,7 +68,7 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
                 self.tableView.reloadData()
             } else {
                 // Log details of the failure
-                println("Error: \(error) \(error.userInfo!)")
+                println("Error: \(error) \(error!.userInfo!)")
             }
         }
     }
@@ -79,7 +78,7 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("searchResultCell") as UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("searchResultCell") as! UITableViewCell
         
         let title = searchResults[indexPath.row]["Title"] as? String
         let price = searchResults[indexPath.row]["Price"] as? String
@@ -89,13 +88,13 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "searchToListing") {
-            let listingController = segue.destinationViewController as ListingViewController
+            let listingController = segue.destinationViewController as! ListingViewController
             let selectedIndex = self.tableView.indexPathForSelectedRow()?.row
             listingController.listingObject = searchResults[selectedIndex!]
         }
     }
     
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("searchToListing", sender: nil)
     }
 }
