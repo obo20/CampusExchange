@@ -11,7 +11,8 @@
 		CE1F03A81AB512D10065197D /* EditListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F03A71AB512D10065197D /* EditListingViewController.swift */; };
 		CE1F03AD1AB515770065197D /* Search-32.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1F03AC1AB515770065197D /* Search-32.png */; };
 		CE1F03AF1AB516A80065197D /* Tails-32.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1F03AE1AB516A80065197D /* Tails-32.png */; };
-		CE408E4C1AE72A5900A3A954 /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE408E4B1AE72A5900A3A954 /* MessagingViewController.swift */; };
+		CE408E4E1AE72CCC00A3A954 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE408E4D1AE72CCC00A3A954 /* MessagesViewController.swift */; };
+		CE408E501AE72CDD00A3A954 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE408E4F1AE72CDD00A3A954 /* ConversationViewController.swift */; };
 		CEBF667E1AB3DDD5004FB37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */; };
 		CEBF66851AB3DDD5004FB37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF66831AB3DDD5004FB37D /* Main.storyboard */; };
 		CEBF66871AB3DDD5004FB37D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBF66861AB3DDD5004FB37D /* Images.xcassets */; };
@@ -52,7 +53,8 @@
 		CE1F03A71AB512D10065197D /* EditListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditListingViewController.swift; sourceTree = "<group>"; };
 		CE1F03AC1AB515770065197D /* Search-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-32.png"; sourceTree = "<group>"; };
 		CE1F03AE1AB516A80065197D /* Tails-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tails-32.png"; sourceTree = "<group>"; };
-		CE408E4B1AE72A5900A3A954 /* MessagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingViewController.swift; path = ../MessagingViewController.swift; sourceTree = "<group>"; };
+		CE408E4D1AE72CCC00A3A954 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesViewController.swift; path = ../MessagesViewController.swift; sourceTree = "<group>"; };
+		CE408E4F1AE72CDD00A3A954 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationViewController.swift; path = ../ConversationViewController.swift; sourceTree = "<group>"; };
 		CEBF66781AB3DDD5004FB37D /* CampusExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF667C1AB3DDD5004FB37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,8 +150,9 @@
 			children = (
 				CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */,
 				CEBF66831AB3DDD5004FB37D /* Main.storyboard */,
+				CE408E4F1AE72CDD00A3A954 /* ConversationViewController.swift */,
+				CE408E4D1AE72CCC00A3A954 /* MessagesViewController.swift */,
 				CE1F03A71AB512D10065197D /* EditListingViewController.swift */,
-				CE408E4B1AE72A5900A3A954 /* MessagingViewController.swift */,
 				CE1F03A51AB4FFA20065197D /* PostViewController.swift */,
 				CEDFD5C01AB4F8CD0008EDEC /* ListingViewController.swift */,
 				CEBF66BE1AB4B166004FB37D /* ListingsViewController.swift */,
@@ -313,8 +316,9 @@
 			files = (
 				CEBF66C11AB4C338004FB37D /* LoginViewController.swift in Sources */,
 				CE1F03A81AB512D10065197D /* EditListingViewController.swift in Sources */,
-				CE408E4C1AE72A5900A3A954 /* MessagingViewController.swift in Sources */,
+				CE408E501AE72CDD00A3A954 /* ConversationViewController.swift in Sources */,
 				CEBF667E1AB3DDD5004FB37D /* AppDelegate.swift in Sources */,
+				CE408E4E1AE72CCC00A3A954 /* MessagesViewController.swift in Sources */,
 				CE1F03A61AB4FFA20065197D /* PostViewController.swift in Sources */,
 				CEBF66BD1AB4B12E004FB37D /* SearchListingsViewController.swift in Sources */,
 				CEDFD5C11AB4F8CD0008EDEC /* ListingViewController.swift in Sources */,
