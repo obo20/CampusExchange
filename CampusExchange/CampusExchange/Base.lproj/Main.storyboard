@@ -774,6 +774,10 @@
                                 <exclude reference="WWm-4m-teg"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="2SA-Rv-UbP"/>
+                                <exclude reference="hT0-UE-xNo"/>
+                                <exclude reference="muk-Yq-iBz"/>
+                                <exclude reference="nuW-Uh-lpF"/>
                                 <exclude reference="MmQ-5i-uTL"/>
                                 <exclude reference="Mxc-kn-aPz"/>
                                 <exclude reference="Vg9-1f-TGd"/>
@@ -784,6 +788,11 @@
                                 <exclude reference="lmU-Sj-Tg2"/>
                                 <exclude reference="cPd-2G-fEE"/>
                                 <exclude reference="l9r-f6-1gY"/>
+                                <exclude reference="55z-xW-e9l"/>
+                                <exclude reference="Iae-QX-isw"/>
+                                <exclude reference="O3J-7A-pSK"/>
+                                <exclude reference="ONl-E8-aMc"/>
+                                <exclude reference="gAG-zK-Hyv"/>
                                 <exclude reference="1PI-c8-4Sc"/>
                                 <exclude reference="Nej-QH-rOO"/>
                                 <exclude reference="g1X-KC-l3d"/>
@@ -795,15 +804,6 @@
                                 <exclude reference="SXV-Tz-SCe"/>
                                 <exclude reference="Xgo-y9-jUb"/>
                                 <exclude reference="oA6-gO-q4E"/>
-                                <exclude reference="55z-xW-e9l"/>
-                                <exclude reference="Iae-QX-isw"/>
-                                <exclude reference="O3J-7A-pSK"/>
-                                <exclude reference="ONl-E8-aMc"/>
-                                <exclude reference="gAG-zK-Hyv"/>
-                                <exclude reference="2SA-Rv-UbP"/>
-                                <exclude reference="hT0-UE-xNo"/>
-                                <exclude reference="muk-Yq-iBz"/>
-                                <exclude reference="nuW-Uh-lpF"/>
                                 <exclude reference="5qQ-m8-edG"/>
                                 <exclude reference="8NV-LC-dDc"/>
                                 <exclude reference="Fjy-Wd-icb"/>
@@ -816,6 +816,10 @@
                                 <include reference="WWm-4m-teg"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="2SA-Rv-UbP"/>
+                                <include reference="hT0-UE-xNo"/>
+                                <include reference="muk-Yq-iBz"/>
+                                <include reference="nuW-Uh-lpF"/>
                                 <include reference="MmQ-5i-uTL"/>
                                 <include reference="Mxc-kn-aPz"/>
                                 <exclude reference="Vg9-1f-TGd"/>
@@ -826,6 +830,12 @@
                                 <include reference="lmU-Sj-Tg2"/>
                                 <include reference="cPd-2G-fEE"/>
                                 <exclude reference="l9r-f6-1gY"/>
+                                <include reference="55z-xW-e9l"/>
+                                <include reference="Iae-QX-isw"/>
+                                <exclude reference="IkT-pc-FEc"/>
+                                <include reference="O3J-7A-pSK"/>
+                                <exclude reference="ONl-E8-aMc"/>
+                                <include reference="gAG-zK-Hyv"/>
                                 <include reference="1PI-c8-4Sc"/>
                                 <exclude reference="Nej-QH-rOO"/>
                                 <include reference="g1X-KC-l3d"/>
@@ -837,16 +847,6 @@
                                 <include reference="SXV-Tz-SCe"/>
                                 <include reference="Xgo-y9-jUb"/>
                                 <include reference="oA6-gO-q4E"/>
-                                <include reference="55z-xW-e9l"/>
-                                <include reference="Iae-QX-isw"/>
-                                <exclude reference="IkT-pc-FEc"/>
-                                <include reference="O3J-7A-pSK"/>
-                                <exclude reference="ONl-E8-aMc"/>
-                                <include reference="gAG-zK-Hyv"/>
-                                <include reference="2SA-Rv-UbP"/>
-                                <include reference="hT0-UE-xNo"/>
-                                <include reference="muk-Yq-iBz"/>
-                                <include reference="nuW-Uh-lpF"/>
                                 <include reference="5qQ-m8-edG"/>
                                 <exclude reference="8NV-LC-dDc"/>
                                 <include reference="Fjy-Wd-icb"/>
@@ -1432,7 +1432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ms-g1-khk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="2204.25"/>
+            <point key="canvasLocation" x="2124" y="2636"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="kDC-Xr-jcq">
@@ -1693,7 +1693,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IF0-ni-3Nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3075" y="1473"/>
+            <point key="canvasLocation" x="3051" y="1559"/>
         </scene>
         <!--Listings-->
         <scene sceneID="HVE-RF-kpW">
@@ -1755,18 +1755,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1XJ-yH-X4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="1473"/>
+            <point key="canvasLocation" x="2124" y="1677"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Messages View Controller-->
         <scene sceneID="O5K-yV-8c8">
             <objects>
-                <tableViewController id="SWH-Vu-0vu" sceneMemberID="viewController">
+                <tableViewController id="SWH-Vu-0vu" customClass="MessagesViewController" customModule="CampusExchange" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WpH-N7-zCQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="w40-a7-pUO">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myConversationCell" id="w40-a7-pUO">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w40-a7-pUO" id="0SI-XA-pd8">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1785,7 +1785,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OW3-kx-1TO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4110" y="-30.75"/>
+            <point key="canvasLocation" x="4054" y="67"/>
         </scene>
         <!--Conversation View Controller-->
         <scene sceneID="d4U-C4-1aI">
@@ -1906,7 +1906,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9f-gw-gt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2988" y="-30.75"/>
+            <point key="canvasLocation" x="2970" y="43"/>
         </scene>
     </scenes>
     <resources>

@@ -13,6 +13,11 @@ import Parse
 class ConversationViewController: UIViewController, UITableViewDelegate {
     
     var listingObject : PFObject!
+    var conversationObject : PFObject!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     @IBAction func sendPressed(sender: UIButton) {
         let senderId = PFUser.currentUser()!.objectId
