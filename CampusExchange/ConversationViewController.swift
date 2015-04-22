@@ -19,6 +19,13 @@ class ConversationViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        var query1 = PFQuery(className:"User")
+        var query2 = PFQuery(className:"User")
+       // query1.whereKey("objectId", equalTo
+    }
+    
     @IBAction func sendPressed(sender: UIButton) {
         let senderId = PFUser.currentUser()!.objectId
         let recipientId = listingObject["UserId"] as? String

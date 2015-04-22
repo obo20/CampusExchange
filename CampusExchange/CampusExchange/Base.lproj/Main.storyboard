@@ -1852,8 +1852,10 @@
                                 <exclude reference="SVh-tB-FQD"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ZD2-dm-YQ8"/>
-                                <exclude reference="vvQ-qk-dB2"/>
+                                <exclude reference="0Ks-Q0-Q6d"/>
+                                <exclude reference="OdS-Ub-HIj"/>
+                                <exclude reference="Deg-Nh-wfU"/>
+                                <exclude reference="UPH-Gl-eOT"/>
                                 <exclude reference="63W-3W-zHy"/>
                                 <exclude reference="Hfc-Se-xcY"/>
                                 <exclude reference="TWo-qc-EZ6"/>
@@ -1861,13 +1863,11 @@
                                 <exclude reference="WI9-nd-9hM"/>
                                 <exclude reference="fxm-Y2-h2Y"/>
                                 <exclude reference="v9a-ao-ZuC"/>
-                                <exclude reference="Deg-Nh-wfU"/>
-                                <exclude reference="UPH-Gl-eOT"/>
+                                <exclude reference="ZD2-dm-YQ8"/>
+                                <exclude reference="vvQ-qk-dB2"/>
+                                <exclude reference="JJe-dQ-div"/>
                                 <exclude reference="cX2-2i-DRo"/>
                                 <exclude reference="gEt-Dq-KHq"/>
-                                <exclude reference="JJe-dQ-div"/>
-                                <exclude reference="0Ks-Q0-Q6d"/>
-                                <exclude reference="OdS-Ub-HIj"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1880,8 +1880,10 @@
                                 <include reference="SVh-tB-FQD"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ZD2-dm-YQ8"/>
-                                <include reference="vvQ-qk-dB2"/>
+                                <include reference="0Ks-Q0-Q6d"/>
+                                <include reference="OdS-Ub-HIj"/>
+                                <include reference="Deg-Nh-wfU"/>
+                                <include reference="UPH-Gl-eOT"/>
                                 <include reference="63W-3W-zHy"/>
                                 <include reference="Hfc-Se-xcY"/>
                                 <include reference="TWo-qc-EZ6"/>
@@ -1889,13 +1891,11 @@
                                 <include reference="WI9-nd-9hM"/>
                                 <include reference="fxm-Y2-h2Y"/>
                                 <include reference="v9a-ao-ZuC"/>
-                                <include reference="Deg-Nh-wfU"/>
-                                <include reference="UPH-Gl-eOT"/>
+                                <include reference="ZD2-dm-YQ8"/>
+                                <include reference="vvQ-qk-dB2"/>
+                                <include reference="JJe-dQ-div"/>
                                 <include reference="cX2-2i-DRo"/>
                                 <include reference="gEt-Dq-KHq"/>
-                                <include reference="JJe-dQ-div"/>
-                                <include reference="0Ks-Q0-Q6d"/>
-                                <include reference="OdS-Ub-HIj"/>
                             </mask>
                         </variation>
                     </view>
@@ -1955,65 +1955,16 @@
         <scene sceneID="O5K-yV-8c8">
             <objects>
                 <tableViewController id="SWH-Vu-0vu" customClass="MessagesViewController" customModule="CampusExchange" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" id="WpH-N7-zCQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="41" sectionHeaderHeight="22" sectionFooterHeight="22" id="WpH-N7-zCQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myConversationCell" rowHeight="66" id="w40-a7-pUO" customClass="MessageCell" customModule="CampusExchange" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myConversationCell" rowHeight="41" id="w40-a7-pUO">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w40-a7-pUO" id="0SI-XA-pd8">
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zks-6D-nsc">
-                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="1" width="87" height="21"/>
-                                            </variation>
-                                        </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTj-JJ-z7l">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="94" y="0.0" width="298" height="65"/>
-                                            </variation>
-                                        </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka6-er-xsr">
-                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="22" width="42" height="21"/>
-                                            </variation>
-                                        </label>
-                                    </subviews>
-                                    <variation key="default">
-                                        <mask key="subviews">
-                                            <exclude reference="Zks-6D-nsc"/>
-                                            <exclude reference="yTj-JJ-z7l"/>
-                                            <exclude reference="ka6-er-xsr"/>
-                                        </mask>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <mask key="subviews">
-                                            <include reference="Zks-6D-nsc"/>
-                                            <include reference="yTj-JJ-z7l"/>
-                                            <include reference="ka6-er-xsr"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="messageOutlet" destination="yTj-JJ-z7l" id="MDk-om-AqH"/>
-                                    <outlet property="timeOutlet" destination="ka6-er-xsr" id="Zzt-yf-rjR"/>
-                                    <outlet property="usernameOutlet" destination="Zks-6D-nsc" id="Loy-Th-Chv"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2042,9 +1993,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8gm-F0-QLA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8gm-F0-QLA">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" rowHeight="61" id="xZw-x0-9P2" customClass="MessageCell" customModule="CampusExchange" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xZw-x0-9P2" id="gUV-pt-GhS">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kca-qx-Xvr">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="0.0" width="85" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5E-UF-Hcj">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="19" width="42" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mz3-O2-Qs4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="101" y="0.0" width="291" height="60"/>
+                                                    </variation>
+                                                </textView>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="kca-qx-Xvr"/>
+                                                    <exclude reference="R5E-UF-Hcj"/>
+                                                    <exclude reference="mz3-O2-Qs4"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="kca-qx-Xvr"/>
+                                                    <include reference="R5E-UF-Hcj"/>
+                                                    <include reference="mz3-O2-Qs4"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageOutlet" destination="mz3-O2-Qs4" id="dkX-c1-dIS"/>
+                                            <outlet property="timeOutlet" destination="R5E-UF-Hcj" id="wBi-aT-E34"/>
+                                            <outlet property="usernameOutlet" destination="kca-qx-Xvr" id="A1S-of-KdY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFd-v7-Aui">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>

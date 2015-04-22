@@ -18,7 +18,6 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         emailField.text = currentUser?.email
-        phoneNumberField.text = currentUser["phoneNumber"] as! String
     }
     
     @IBAction func update() {
