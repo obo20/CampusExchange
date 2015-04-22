@@ -33,20 +33,6 @@ class ListingViewController: UIViewController {
     }
     
     @IBAction func contactSeller(sender: UIButton) {
-        var userQuery = PFUser.query()
-        var userIdForListing = listingObject["UserId"] as? String
-        userQuery!.getObjectInBackgroundWithId(userIdForListing!, block: { (user, error) -> Void in
-            if error == nil {
-                let emailAddress = user!["email"] as! String
-                let phoneNumber = user!["phoneNumber"] as! String
-                var alert = UIAlertController(title: "Contact Information", message: "Email: \(emailAddress) \n Phone: \(phoneNumber)", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
-                
-            }
-            else {
-                println("Error: \(error) \(error!.userInfo!)")
-            }
-        })
+
     }
 }
