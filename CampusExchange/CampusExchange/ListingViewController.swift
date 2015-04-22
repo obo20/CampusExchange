@@ -35,4 +35,11 @@ class ListingViewController: UIViewController {
     @IBAction func contactSeller(sender: UIButton) {
 
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "listingToConversation") {
+            let conversationController = segue.destinationViewController as! ConversationViewController
+            conversationController.listingObject = listingObject
+        }
+    }
 }

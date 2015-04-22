@@ -54,16 +54,22 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
                 println("Successfully retrieved \(objects!.count) listings.")
                 //clear out the results
                 self.searchResults.removeAll(keepCapacity: false)
-                if objects!.count == 0 {
+                if let objects = objects as? [PFObject] {
+                    for object in objects {
+                        let listingUserId = object["UserId"] as? String
+                        let currentUserId = PFUser.currentUser()!.objectId
+                        if listingUserId != currentUserId {
+                            self.searchResults.append(object)
+                        }
+                    }
+                }
+                
+                if self.searchResults.count == 0 {
                     var alert = UIAlertController(title: "Notice:", message: "Sorry, no related listings were found.", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }
-                if let objects = objects as? [PFObject] {
-                    for object in objects {
-                        self.searchResults.append(object)
-                    }
-                }
+                
                 // Reload table data after background query is done
                 self.tableView.reloadData()
             } else {
