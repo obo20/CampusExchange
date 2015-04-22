@@ -1787,6 +1787,9 @@
                                         <include reference="wIe-IR-soU"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="sendPressed:" destination="vvg-ga-KW1" eventType="touchUpInside" id="esy-xJ-RU5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
