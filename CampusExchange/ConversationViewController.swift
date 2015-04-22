@@ -39,7 +39,6 @@ class ConversationViewController: UIViewController, UITableViewDelegate {
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         }
-        
     }
     
 }

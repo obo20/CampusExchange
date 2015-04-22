@@ -32,6 +32,37 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func forgotPassword() {
+        var alert = UIAlertController(title: "Forgot Password?", message: "Enter your email to have a password reset link sent to you.", preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            textField.text = "Email address"
+        })
+        alert.addAction(UIAlertAction(title: "Reset Password", style: .Default, handler: { (action) -> Void in
+            let emailField = alert.textFields![0] as! UITextField
+            if !emailField.text.isEmpty {
+                PFUser.requestPasswordResetForEmailInBackground(emailField.text, block: { (success, error) -> Void in
+                    if (success) {
+                        // The object has been saved.
+                        var alert = UIAlertController(title: "Success", message: "Your reset password link has been sent.", preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    } else {
+                        // There was a problem, check error.description
+                        var errorString = "undefined error"
+                        if let userError = error!.userInfo {
+                            errorString = userError["error"] as! String
+                        }
+                        var alert = UIAlertController(title: "Error:", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+                })
+            }
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func logIn() {
         let username = self.usernameField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         let password = self.passwordField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
