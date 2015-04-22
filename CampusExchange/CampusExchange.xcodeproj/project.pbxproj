@@ -13,6 +13,7 @@
 		CE1F03AF1AB516A80065197D /* Tails-32.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1F03AE1AB516A80065197D /* Tails-32.png */; };
 		CE408E4E1AE72CCC00A3A954 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE408E4D1AE72CCC00A3A954 /* MessagesViewController.swift */; };
 		CE408E501AE72CDD00A3A954 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE408E4F1AE72CDD00A3A954 /* ConversationViewController.swift */; };
+		CE9883421AE848790054F6E2 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9883411AE848790054F6E2 /* MessageCell.swift */; };
 		CEBF667E1AB3DDD5004FB37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */; };
 		CEBF66851AB3DDD5004FB37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF66831AB3DDD5004FB37D /* Main.storyboard */; };
 		CEBF66871AB3DDD5004FB37D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBF66861AB3DDD5004FB37D /* Images.xcassets */; };
@@ -57,6 +58,7 @@
 		CE1F03AE1AB516A80065197D /* Tails-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tails-32.png"; sourceTree = "<group>"; };
 		CE408E4D1AE72CCC00A3A954 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesViewController.swift; path = ../MessagesViewController.swift; sourceTree = "<group>"; };
 		CE408E4F1AE72CDD00A3A954 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationViewController.swift; path = ../ConversationViewController.swift; sourceTree = "<group>"; };
+		CE9883411AE848790054F6E2 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		CEBF66781AB3DDD5004FB37D /* CampusExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF667C1AB3DDD5004FB37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */,
 				CEBF66831AB3DDD5004FB37D /* Main.storyboard */,
+				CE9883411AE848790054F6E2 /* MessageCell.swift */,
 				DA1891231AE745DE0027A205 /* TabBarController.swift */,
 				CE408E4F1AE72CDD00A3A954 /* ConversationViewController.swift */,
 				CE408E4D1AE72CCC00A3A954 /* MessagesViewController.swift */,
@@ -324,6 +327,7 @@
 				CE1F03A81AB512D10065197D /* EditListingViewController.swift in Sources */,
 				DA1891241AE745DE0027A205 /* TabBarController.swift in Sources */,
 				CE408E501AE72CDD00A3A954 /* ConversationViewController.swift in Sources */,
+				CE9883421AE848790054F6E2 /* MessageCell.swift in Sources */,
 				CEBF667E1AB3DDD5004FB37D /* AppDelegate.swift in Sources */,
 				CE408E4E1AE72CCC00A3A954 /* MessagesViewController.swift in Sources */,
 				CE1F03A61AB4FFA20065197D /* PostViewController.swift in Sources */,
