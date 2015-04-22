@@ -34,6 +34,8 @@
 		CEBF66C11AB4C338004FB37D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66C01AB4C338004FB37D /* LoginViewController.swift */; };
 		CEBF66C31AB4C346004FB37D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */; };
 		CEDFD5C11AB4F8CD0008EDEC /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD5C01AB4F8CD0008EDEC /* ListingViewController.swift */; };
+		DA1891241AE745DE0027A205 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1891231AE745DE0027A205 /* TabBarController.swift */; };
+		DA53BD4B1AE83171008B01EB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA53BD4A1AE83171008B01EB /* SettingsViewController.swift */; };
 		DA5FA5BC1AE30789009A72C9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5FA5BA1AE30789009A72C9 /* Bolts.framework */; };
 		DA5FA5BD1AE30789009A72C9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5FA5BB1AE30789009A72C9 /* Parse.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,8 @@
 		CEBF66C01AB4C338004FB37D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CEDFD5C01AB4F8CD0008EDEC /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
+		DA1891231AE745DE0027A205 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		DA53BD4A1AE83171008B01EB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DA5FA5BA1AE30789009A72C9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		DA5FA5BB1AE30789009A72C9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,12 +154,14 @@
 			children = (
 				CEBF667D1AB3DDD5004FB37D /* AppDelegate.swift */,
 				CEBF66831AB3DDD5004FB37D /* Main.storyboard */,
+				DA1891231AE745DE0027A205 /* TabBarController.swift */,
 				CE408E4F1AE72CDD00A3A954 /* ConversationViewController.swift */,
 				CE408E4D1AE72CCC00A3A954 /* MessagesViewController.swift */,
 				CE1F03A71AB512D10065197D /* EditListingViewController.swift */,
 				CE1F03A51AB4FFA20065197D /* PostViewController.swift */,
 				CEDFD5C01AB4F8CD0008EDEC /* ListingViewController.swift */,
 				CEBF66BE1AB4B166004FB37D /* ListingsViewController.swift */,
+				DA53BD4A1AE83171008B01EB /* SettingsViewController.swift */,
 				CEBF66C01AB4C338004FB37D /* LoginViewController.swift */,
 				CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */,
 				CEBF66BC1AB4B12E004FB37D /* SearchListingsViewController.swift */,
@@ -316,6 +322,7 @@
 			files = (
 				CEBF66C11AB4C338004FB37D /* LoginViewController.swift in Sources */,
 				CE1F03A81AB512D10065197D /* EditListingViewController.swift in Sources */,
+				DA1891241AE745DE0027A205 /* TabBarController.swift in Sources */,
 				CE408E501AE72CDD00A3A954 /* ConversationViewController.swift in Sources */,
 				CEBF667E1AB3DDD5004FB37D /* AppDelegate.swift in Sources */,
 				CE408E4E1AE72CCC00A3A954 /* MessagesViewController.swift in Sources */,
@@ -324,6 +331,7 @@
 				CEDFD5C11AB4F8CD0008EDEC /* ListingViewController.swift in Sources */,
 				CEBF66BF1AB4B166004FB37D /* ListingsViewController.swift in Sources */,
 				CEBF66C31AB4C346004FB37D /* SignUpViewController.swift in Sources */,
+				DA53BD4B1AE83171008B01EB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -103,4 +103,5 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("searchToListing", sender: nil)
     }
+    
 }

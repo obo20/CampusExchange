@@ -79,5 +79,4 @@ class ListingsViewController: UITableViewController {
         self.navigationController?.tabBarController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
 }
