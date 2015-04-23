@@ -32,6 +32,10 @@ class EditListingViewController: UIViewController {
         self.priceField.text = listingObject["Price"] as? String
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
     // TODO: Cancel button on edit menu
     
     @IBAction func saveListing() {

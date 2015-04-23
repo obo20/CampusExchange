@@ -18,6 +18,7 @@ class TabBarController: UITabBarController {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: "swipeNavigation:")
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.view.addGestureRecognizer(swipeLeft)
+        
     }
     
     func swipeNavigation(gesture: UIGestureRecognizer){
@@ -26,17 +27,17 @@ class TabBarController: UITabBarController {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
                 let i = self.selectedIndex
-                if i == 2 {
-                    self.selectedIndex = 0
-                } else {
-                    self.selectedIndex++
-                }
-            case UISwipeGestureRecognizerDirection.Left:
-                let i = self.selectedIndex
                 if i == 0 {
                     self.selectedIndex = 2
                 } else {
                     self.selectedIndex--
+                }
+            case UISwipeGestureRecognizerDirection.Left:
+                let i = self.selectedIndex
+                if i == 2 {
+                    self.selectedIndex = 0
+                } else {
+                    self.selectedIndex++
                 }
             default:
                 break

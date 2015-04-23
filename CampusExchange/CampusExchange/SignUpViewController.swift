@@ -18,9 +18,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordField : UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func signUp() {

@@ -22,6 +22,10 @@ class LoginViewController: UIViewController {
         self.passwordField.text = ""
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         var currentUser = PFUser.currentUser()

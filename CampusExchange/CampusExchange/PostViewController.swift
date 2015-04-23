@@ -19,10 +19,12 @@ class PostViewController: UIViewController {
     @IBOutlet weak var conditionField : UITextField!
     @IBOutlet weak var priceField : UITextField!
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func addListing() {
