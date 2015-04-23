@@ -17,6 +17,8 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
     var conversationObject : PFObject!
     var conversationPartner : PFUser!
     var messagesArray : [PFObject] = []
+    var conversationPartnerId : NSString!
+    @IBOutlet weak var messageOutlet: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,6 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        var conversationPartnerId : NSString!
         if(conversationObject["User1_ID"]!.isEqualToString(PFUser.currentUser()!.objectId!))
         {
             conversationPartnerId = conversationObject["User2_ID"] as! NSString
@@ -65,7 +66,7 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
         var query = PFQuery(className:"Message")
         // Get listings originally posted with the current user's id
         query.whereKey("Conversation_ID", equalTo:conversationObject.objectId!)
-        query.orderByDescending("createdAt")
+        query.orderByAscending("createdAt")
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 // The find succeeded.
@@ -87,18 +88,17 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBAction func sendPressed(sender: UIButton) {
         let senderId = PFUser.currentUser()!.objectId
-        let recipientId = listingObject["UserId"] as? String
+
+        var messageObject = PFObject(className: "Message")
+        messageObject["Sender_ID"] = senderId
+        messageObject["Recipient_ID"] = conversationPartnerId
+        messageObject["Conversation_ID"] = conversationObject.objectId
+        messageObject["Message"] = messageOutlet.text as NSString
         
-        var conversation = PFObject(className:"Conversation")
-        conversation["Listing_ID"] = listingObject.objectId
-        conversation["User1_ID"] = senderId
-        conversation["User2_ID"] = recipientId
-        
-        conversation.saveInBackgroundWithBlock { (success, error) -> Void in
+        messageObject.saveInBackgroundWithBlock { (success, error) -> Void in
             if (success) {
                 // The object has been saved.
-                
-                
+            
             } else {
                 // There was a problem, check error.description
                 var errorString = "undefined error"
@@ -109,7 +109,32 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
+            self.messagesArray.append(messageObject)
+            self.messageOutlet.text = ""
+            self.tableView.reloadData()
         }
+        //code for adding a new conversation when we need to do this.
+//        var conversation = PFObject(className:"Conversation")
+//        conversation["Listing_ID"] = listingObject.objectId
+//        conversation["User1_ID"] = senderId
+//        conversation["User2_ID"] = recipientId
+//        
+//        conversation.saveInBackgroundWithBlock { (success, error) -> Void in
+//            if (success) {
+//                // The object has been saved.
+//                
+//                
+//            } else {
+//                // There was a problem, check error.description
+//                var errorString = "undefined error"
+//                if let userError = error!.userInfo {
+//                    errorString = userError["error"] as! String
+//                }
+//                var alert = UIAlertController(title: "Error:", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+//                self.presentViewController(alert, animated: true, completion: nil)
+//            }
+//        }
     }
     
 }
