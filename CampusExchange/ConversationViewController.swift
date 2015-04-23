@@ -12,13 +12,15 @@ import Parse
 
 class ConversationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    
     var listingObject : PFObject!
     var conversationObject : PFObject!
-    var conversationPartner : PFUser!
     var messagesArray : [PFObject] = []
-    var conversationPartnerId : NSString!
-    @IBOutlet weak var messageField: UITextField!
+    
+    var conversationUsers = [String: PFUser]()
+    var conversationPartnerId : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,40 +29,46 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if(conversationObject != nil)
-        {
-            if(conversationObject["User1_ID"]!.isEqualToString(PFUser.currentUser()!.objectId!))
-            {
-                conversationPartnerId = conversationObject["User2_ID"] as! NSString
+        if(conversationObject != nil) {
+            conversationUsers[PFUser.currentUser()!.objectId!] = PFUser.currentUser()
+            
+            if conversationObject["User1_ID"] as? String == PFUser.currentUser()!.objectId! {
+                conversationPartnerId = conversationObject["User2_ID"] as? String
+            } else {
+                conversationPartnerId = conversationObject["User1_ID"] as? String
             }
-            else if(conversationObject["User2_ID"]!.isEqualToString(PFUser.currentUser()!.objectId!))
-            {
-                conversationPartnerId = conversationObject["User1_ID"] as! NSString
-            }
+            
+            var partnerQuery = PFUser.query()
+            partnerQuery?.getObjectInBackgroundWithId(conversationPartnerId, block: { (partner, error) -> Void in
+                if error == nil {
+                    self.conversationUsers[self.conversationPartnerId] = (partner as! PFUser)
+                }
+                else {
+                    println("Error: \(error) \(error!.userInfo!)")
+                }
+            })
+            
             self.getMessages()
             
-            //this is the code that for some reason won't allow us to load in the User for the conversation partner
-            //        var query = PFQuery(className:"User")
-            //        query.getObjectInBackgroundWithId(conversationPartnerId, block: { (partner:PFObject, error: NSError?) -> Void in
-            //            if error != nil {
-            //                println(error)
-            //            }
-            //            else
-            //            {
-            //                self.conversationPartner = partner as! PFUser
-            //            }
-            //        })
         }
     }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.messagesArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         var cell:MessageCell = tableView.dequeueReusableCellWithIdentifier("MessageCell") as! MessageCell
         let message = messagesArray[indexPath.row]["Message"] as? String
+        let userId = messagesArray[indexPath.row]["Sender_ID"] as? String
+        
+        let date = messagesArray[indexPath.row].createdAt
+        let dateFormat = NSDateFormatter()
+        dateFormat.dateStyle = NSDateFormatterStyle.ShortStyle
+        
         cell.messageOutlet.text = message
+        cell.usernameOutlet.text = conversationUsers[userId!]?.username
+        cell.timeOutlet.text = dateFormat.stringFromDate(date!)
         return cell
     }
     
@@ -115,7 +123,8 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
             self.messageField.text = ""
             self.tableView.reloadData()
         }
-        //code for adding a new conversation when we need to do this.
+        
+//        code for adding a new conversation when we need to do this.
 //        var conversation = PFObject(className:"Conversation")
 //        conversation["Listing_ID"] = listingObject.objectId
 //        conversation["User1_ID"] = senderId
