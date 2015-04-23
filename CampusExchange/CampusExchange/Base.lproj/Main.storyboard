@@ -2141,7 +2141,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cYy-Bf-4Zv"/>
                     <connections>
-                        <outlet property="messageOutlet" destination="KFd-v7-Aui" id="nrR-Au-dzC"/>
+                        <outlet property="messageField" destination="KFd-v7-Aui" id="fhz-ft-AWT"/>
                         <outlet property="tableView" destination="8gm-F0-QLA" id="hGX-jc-XF9"/>
                     </connections>
                 </viewController>

@@ -18,7 +18,7 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
     var conversationPartner : PFUser!
     var messagesArray : [PFObject] = []
     var conversationPartnerId : NSString!
-    @IBOutlet weak var messageOutlet: UITextField!
+    @IBOutlet weak var messageField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,28 +27,30 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if(conversationObject["User1_ID"]!.isEqualToString(PFUser.currentUser()!.objectId!))
+        if(conversationObject != nil)
         {
-            conversationPartnerId = conversationObject["User2_ID"] as! NSString
+            if(conversationObject["User1_ID"]!.isEqualToString(PFUser.currentUser()!.objectId!))
+            {
+                conversationPartnerId = conversationObject["User2_ID"] as! NSString
+            }
+            else if(conversationObject["User2_ID"]!.isEqualToString(PFUser.currentUser()!.objectId!))
+            {
+                conversationPartnerId = conversationObject["User1_ID"] as! NSString
+            }
+            self.getMessages()
+            
+            //this is the code that for some reason won't allow us to load in the User for the conversation partner
+            //        var query = PFQuery(className:"User")
+            //        query.getObjectInBackgroundWithId(conversationPartnerId, block: { (partner:PFObject, error: NSError?) -> Void in
+            //            if error != nil {
+            //                println(error)
+            //            }
+            //            else
+            //            {
+            //                self.conversationPartner = partner as! PFUser
+            //            }
+            //        })
         }
-        else if(conversationObject["User2_ID"]!.isEqualToString(PFUser.currentUser()!.objectId!)) 
-        {
-            conversationPartnerId = conversationObject["User1_ID"] as! NSString
-        }
-        self.getMessages()
-        
-        //this is the code that for some reason won't allow us to load in the User for the conversation partner
-//        var query = PFQuery(className:"User")
-//        query.getObjectInBackgroundWithId(conversationPartnerId, block: { (partner:PFObject, error: NSError?) -> Void in
-//            if error != nil {
-//                println(error)
-//            }
-//            else
-//            {
-//                self.conversationPartner = partner as! PFUser
-//            }
-//        })
-        
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.messagesArray.count
@@ -93,7 +95,7 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
         messageObject["Sender_ID"] = senderId
         messageObject["Recipient_ID"] = conversationPartnerId
         messageObject["Conversation_ID"] = conversationObject.objectId
-        messageObject["Message"] = messageOutlet.text as NSString
+        messageObject["Message"] = messageField.text as NSString
         
         messageObject.saveInBackgroundWithBlock { (success, error) -> Void in
             if (success) {
@@ -110,7 +112,7 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             self.messagesArray.append(messageObject)
-            self.messageOutlet.text = ""
+            self.messageField.text = ""
             self.tableView.reloadData()
         }
         //code for adding a new conversation when we need to do this.
