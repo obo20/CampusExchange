@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1976DA91-C533-46A3-92F7-4B4657296BA4</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>CampusExchange</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C7CB39D0B6A771FD20ACF5F6EE9AE1BF9E616085</key>
 		<string>https://github.com/obo20/CampusExchange.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CampusExchange/CampusExchange.xcodeproj/project.xcworkspace</string>
+	<string>CampusExchange/CampusExchange.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C7CB39D0B6A771FD20ACF5F6EE9AE1BF9E616085</key>

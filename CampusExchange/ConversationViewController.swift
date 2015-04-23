@@ -10,20 +10,79 @@ import Foundation
 import UIKit
 import Parse
 
-class ConversationViewController: UIViewController, UITableViewDelegate {
+class ConversationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
     var listingObject : PFObject!
     var conversationObject : PFObject!
+    var conversationPartner : PFUser!
+    var messagesArray : [PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "MessageCell")
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        var query1 = PFQuery(className:"User")
-        var query2 = PFQuery(className:"User")
-       // query1.whereKey("objectId", equalTo
+        var conversationPartnerId : NSString!
+        if(conversationObject["User1_ID"]!.isEqualToString(PFUser.currentUser()!.objectId!))
+        {
+            conversationPartnerId = conversationObject["User2_ID"] as! NSString
+        }
+        else if(conversationObject["User2_ID"]!.isEqualToString(PFUser.currentUser()!.objectId!)) 
+        {
+            conversationPartnerId = conversationObject["User1_ID"] as! NSString
+        }
+        self.getMessages()
+        
+        //this is the code that for some reason won't allow us to load in the User for the conversation partner
+//        var query = PFQuery(className:"User")
+//        query.getObjectInBackgroundWithId(conversationPartnerId, block: { (partner:PFObject, error: NSError?) -> Void in
+//            if error != nil {
+//                println(error)
+//            }
+//            else
+//            {
+//                self.conversationPartner = partner as! PFUser
+//            }
+//        })
+        
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.messagesArray.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell:MessageCell = tableView.dequeueReusableCellWithIdentifier("MessageCell") as! MessageCell
+        let message = messagesArray[indexPath.row]["Message"] as? String
+        cell.messageOutlet.text = message
+        return cell
+    }
+    
+    func getMessages(){
+        var query = PFQuery(className:"Message")
+        // Get listings originally posted with the current user's id
+        query.whereKey("Conversation_ID", equalTo:conversationObject.objectId!)
+        query.orderByDescending("createdAt")
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                // The find succeeded.
+                println("Successfully retrieved \(objects!.count) messages.")
+                self.messagesArray.removeAll(keepCapacity: false)
+                if let objects = objects as? [PFObject] {
+                    for object in objects {
+                        self.messagesArray.append(object)
+                    }
+                }
+                // Reload table data after background query is done
+                self.tableView.reloadData()
+            } else {
+                // Log details of the failure
+                println("Error: \(error) \(error!.userInfo!)")
+            }
+        }
     }
     
     @IBAction func sendPressed(sender: UIButton) {

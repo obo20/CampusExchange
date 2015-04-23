@@ -1997,7 +1997,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" rowHeight="61" id="xZw-x0-9P2" customClass="MessageCell" customModule="CampusExchange" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="61" id="xZw-x0-9P2" customClass="MessageCell" customModule="CampusExchange" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xZw-x0-9P2" id="gUV-pt-GhS">
@@ -2054,6 +2054,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vvg-ga-KW1" id="H70-6J-sFk"/>
+                                    <outlet property="delegate" destination="vvg-ga-KW1" id="LIb-QR-wjR"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFd-v7-Aui">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -2090,7 +2094,7 @@
                             <constraint firstItem="zEv-Br-Dk9" firstAttribute="trailing" secondItem="8gm-F0-QLA" secondAttribute="trailing" id="IBd-d6-Idx"/>
                             <constraint firstItem="zEv-Br-Dk9" firstAttribute="leading" secondItem="KFd-v7-Aui" secondAttribute="trailing" constant="8" symbolic="YES" id="Qm6-sE-hfW"/>
                             <constraint firstAttribute="trailing" secondItem="zEv-Br-Dk9" secondAttribute="trailing" id="Rjx-yS-VVe"/>
-                            <constraint firstItem="8gm-F0-QLA" firstAttribute="top" secondItem="BpL-JW-Y31" secondAttribute="topMargin" constant="43" id="SuF-WR-mUY"/>
+                            <constraint firstItem="8gm-F0-QLA" firstAttribute="top" secondItem="yqy-bw-vIF" secondAttribute="bottom" id="RlL-M4-tKH"/>
                             <constraint firstItem="8gm-F0-QLA" firstAttribute="leading" secondItem="BpL-JW-Y31" secondAttribute="leading" id="Wpz-gp-OKk"/>
                             <constraint firstItem="KFd-v7-Aui" firstAttribute="leading" secondItem="BpL-JW-Y31" secondAttribute="leadingMargin" constant="-10" id="avm-KH-pDx"/>
                             <constraint firstItem="KFd-v7-Aui" firstAttribute="top" secondItem="8gm-F0-QLA" secondAttribute="bottom" constant="8" symbolic="YES" id="omI-CV-rTN"/>
@@ -2103,16 +2107,16 @@
                                 <exclude reference="zEv-Br-Dk9"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5nb-iJ-Nqq"/>
+                                <exclude reference="RlL-M4-tKH"/>
+                                <exclude reference="Wpz-gp-OKk"/>
                                 <exclude reference="EmJ-rX-Qam"/>
                                 <exclude reference="avm-KH-pDx"/>
                                 <exclude reference="omI-CV-rTN"/>
+                                <exclude reference="5nb-iJ-Nqq"/>
                                 <exclude reference="IBd-d6-Idx"/>
                                 <exclude reference="Qm6-sE-hfW"/>
                                 <exclude reference="Rjx-yS-VVe"/>
                                 <exclude reference="wv1-mU-z9h"/>
-                                <exclude reference="SuF-WR-mUY"/>
-                                <exclude reference="Wpz-gp-OKk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2122,20 +2126,23 @@
                                 <include reference="zEv-Br-Dk9"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5nb-iJ-Nqq"/>
+                                <include reference="RlL-M4-tKH"/>
+                                <include reference="Wpz-gp-OKk"/>
                                 <include reference="EmJ-rX-Qam"/>
                                 <include reference="avm-KH-pDx"/>
                                 <include reference="omI-CV-rTN"/>
+                                <include reference="5nb-iJ-Nqq"/>
                                 <include reference="IBd-d6-Idx"/>
                                 <include reference="Qm6-sE-hfW"/>
                                 <include reference="Rjx-yS-VVe"/>
                                 <include reference="wv1-mU-z9h"/>
-                                <include reference="SuF-WR-mUY"/>
-                                <include reference="Wpz-gp-OKk"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="cYy-Bf-4Zv"/>
+                    <connections>
+                        <outlet property="tableView" destination="8gm-F0-QLA" id="hGX-jc-XF9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73o-Qc-wqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2168,6 +2175,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="E86-rS-ysR"/>
         <segue reference="4s2-Ea-EZx"/>
-        <segue reference="PXB-Qc-96O"/>
+        <segue reference="oTr-gE-Tv2"/>
     </inferredMetricsTieBreakers>
 </document>
