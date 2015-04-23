@@ -21,6 +21,10 @@ class EditListingViewController: UIViewController {
     
     var listingObject : PFObject!
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,10 +34,6 @@ class EditListingViewController: UIViewController {
         self.courseField.text = listingObject["Course"] as? String
         self.conditionField.text = listingObject["Condition"] as? String
         self.priceField.text = listingObject["Price"] as? String
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        self.view.endEditing(true)
     }
     
     // TODO: Cancel button on edit menu

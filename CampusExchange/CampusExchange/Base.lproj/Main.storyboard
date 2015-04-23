@@ -1852,22 +1852,22 @@
                                 <exclude reference="q2C-Ef-Kvi"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ErX-cW-ASn"/>
-                                <exclude reference="Mge-ZM-fhX"/>
+                                <exclude reference="4Ju-Ne-gG1"/>
+                                <exclude reference="B7T-mX-elY"/>
+                                <exclude reference="kDT-Ue-v6Z"/>
+                                <exclude reference="tR4-Td-vty"/>
+                                <exclude reference="uSh-Nh-Cv0"/>
                                 <exclude reference="FZQ-ht-fzq"/>
                                 <exclude reference="Qzd-ZH-Eu5"/>
                                 <exclude reference="UR7-qW-EXP"/>
                                 <exclude reference="b2v-Bl-fuv"/>
                                 <exclude reference="vDY-pa-LUx"/>
-                                <exclude reference="kDT-Ue-v6Z"/>
-                                <exclude reference="tR4-Td-vty"/>
-                                <exclude reference="uSh-Nh-Cv0"/>
-                                <exclude reference="3T1-qX-Acf"/>
+                                <exclude reference="ErX-cW-ASn"/>
+                                <exclude reference="Mge-ZM-fhX"/>
                                 <exclude reference="4G9-vU-Vwg"/>
                                 <exclude reference="4j3-gz-nCh"/>
                                 <exclude reference="DeD-3m-3wk"/>
-                                <exclude reference="4Ju-Ne-gG1"/>
-                                <exclude reference="B7T-mX-elY"/>
+                                <exclude reference="3T1-qX-Acf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1880,22 +1880,22 @@
                                 <include reference="q2C-Ef-Kvi"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ErX-cW-ASn"/>
-                                <include reference="Mge-ZM-fhX"/>
+                                <include reference="4Ju-Ne-gG1"/>
+                                <include reference="B7T-mX-elY"/>
+                                <include reference="kDT-Ue-v6Z"/>
+                                <include reference="tR4-Td-vty"/>
+                                <include reference="uSh-Nh-Cv0"/>
                                 <include reference="FZQ-ht-fzq"/>
                                 <include reference="Qzd-ZH-Eu5"/>
                                 <include reference="UR7-qW-EXP"/>
                                 <include reference="b2v-Bl-fuv"/>
                                 <include reference="vDY-pa-LUx"/>
-                                <include reference="kDT-Ue-v6Z"/>
-                                <include reference="tR4-Td-vty"/>
-                                <include reference="uSh-Nh-Cv0"/>
-                                <include reference="3T1-qX-Acf"/>
+                                <include reference="ErX-cW-ASn"/>
+                                <include reference="Mge-ZM-fhX"/>
                                 <include reference="4G9-vU-Vwg"/>
                                 <include reference="4j3-gz-nCh"/>
                                 <include reference="DeD-3m-3wk"/>
-                                <include reference="4Ju-Ne-gG1"/>
-                                <include reference="B7T-mX-elY"/>
+                                <include reference="3T1-qX-Acf"/>
                             </mask>
                         </variation>
                     </view>
@@ -2018,10 +2018,10 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="19" width="42" height="21"/>
+                                                        <rect key="frame" x="8" y="19" width="85" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mz3-O2-Qs4">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz3-O2-Qs4">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>

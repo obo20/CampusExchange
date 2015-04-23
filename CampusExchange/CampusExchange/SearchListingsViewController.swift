@@ -18,6 +18,10 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var authorField : UITextField!
     @IBOutlet weak var ISBNField : UITextField!
     @IBOutlet weak var courseField : UITextField!
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
