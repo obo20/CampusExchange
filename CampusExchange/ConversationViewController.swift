@@ -25,7 +25,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     var conversationPartnerId : String! // The other conversation partner
     var chatTimer: NSTimer?
     
-    
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
         println("keyboard action")
@@ -33,8 +32,12 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let title = self.conversationObject["Listing_Title"] as! NSString
-        self.title = ("Chatting about: \(title)")
+        if conversationObject != nil {
+            let title = conversationObject["Listing_Title"] as? String
+            self.title = ("Chatting about: \(title!)")
+        } else {
+            self.title = ("Start a new chat!")
+        }
         messageField.delegate = self
         //notifications that the keyboard is going up or down
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)

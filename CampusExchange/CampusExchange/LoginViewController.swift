@@ -37,7 +37,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         var currentUser = PFUser.currentUser()
         if (currentUser != nil) {
             // Do stuff with the user
-            println("Logged in as \(currentUser!.username)")
+            println("Logged in as \(currentUser!.username!)")
             self.performSegueWithIdentifier("loginToListings", sender: nil)
         }
     }
