@@ -10,20 +10,22 @@ import Foundation
 import UIKit
 import Parse
 
-class ConversationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ConversationViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     var listingObject : PFObject! // !nil if coming from listing controller, nil otherwise
     var conversationObject : PFObject! // !nil if coming from message controller, nil otherwise
-    
     var conversationId : String!
     var messagesArray : [PFObject] = []
+    var messagesArrayLastCount : NSInteger = 0
     var conversationUsers = [String: PFUser]() // Both users
-    
     let currentUserId = PFUser.currentUser()?.objectId
     var conversationPartnerId : String! // The other conversation partner
+    var chatTimer: NSTimer!
+    
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
@@ -32,7 +34,23 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "MessageCell")
+        messageField.delegate = self
+        //notifications that the keyboard is going up or down
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillBeHidden:", name: UIKeyboardWillHideNotification, object: nil)
+        //timer that refreshes the chat every 5 seconds
+        chatTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("chatRefresh"), userInfo: nil, repeats: true)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        //we want to stop the chat from refreshing once the view leaves
+        chatTimer?.invalidate()
+        chatTimer = nil
+    }
+    
+    func chatRefresh()
+    {
+        self.getMessages()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -84,7 +102,7 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
         })
         
     }
-    
+    // MARK: TABLE RELATED FUNCTIONS
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.messagesArray.count
     }
@@ -104,6 +122,43 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
         return cell
     }
     
+    //this scrolls to the bottom row of the chat table
+    func scrollToBottom()
+    {
+        var indexPath = NSIndexPath(forRow: (messagesArray.count - 1), inSection: 0)
+        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+    }
+    // MARK: KEYBOARD CONTROLS
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if (textField.text.isEmpty)
+        {
+            return false
+        }
+        return true
+    }
+    
+    func keyboardWasShown(notification: NSNotification)
+    {
+        NSLog("hi")
+        let info: NSDictionary = notification.userInfo!
+        let keyboardSize: CGSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue().size as CGSize!
+        self.view.frame.origin.y -= (keyboardSize.height - 49)
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification)
+    {
+        NSLog("hi")
+        let info: NSDictionary = notification.userInfo!
+        let keyboardSize: CGSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue().size as CGSize!
+        self.view.frame.origin.y = 0//(keyboardSize.height - 49)
+    }
+    
+    // MARK: OTHER
     func getMessages(){
         if conversationId != nil {
             var query = PFQuery(className:"Message")
@@ -121,7 +176,15 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
                     }
                     // Reload table data after background query is done
                     self.tableView.reloadData()
-                } else {
+                    //if the counts aren't the same as the last time, we have a new message to show, so we need to scroll to the latest message.
+                    if(self.messagesArray.count != self.messagesArrayLastCount)
+                    {
+                        self.scrollToBottom()
+                        self.messagesArrayLastCount = self.messagesArray.count
+                    }
+                }
+                else
+                {
                     // Log details of the failure
                     println("Error: \(error) \(error!.userInfo!)")
                 }
@@ -153,6 +216,11 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     @IBAction func sendPressed(sender: UIButton) {
+        if(messageField.text.isEmpty)
+        {
+            return
+        }
+        
         var messageObject = PFObject(className: "Message")
         messageObject["Sender_ID"] = currentUserId
         messageObject["Recipient_ID"] = conversationPartnerId
@@ -176,6 +244,7 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
             self.messagesArray.append(messageObject)
             self.messageField.text = ""
             self.tableView.reloadData()
+            self.scrollToBottom()
         }
     }
     

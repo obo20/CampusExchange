@@ -2028,7 +2028,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="101" y="0.0" width="291" height="60"/>
+                                                        <rect key="frame" x="101" y="0.0" width="264" height="60"/>
                                                     </variation>
                                                 </textView>
                                             </subviews>

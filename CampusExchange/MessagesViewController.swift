@@ -13,6 +13,7 @@ import Parse
 class MessagesViewController: UITableViewController {
     
     var currentUserConversations : [PFObject] = []
+    var usersForCells : [PFUser] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +38,8 @@ class MessagesViewController: UITableViewController {
                         self.currentUserConversations.append(object)
                     }
                 }
-                // Reload table data after background query is done
-                self.tableView.reloadData()
+                let partners = self.setPartners()
+                self.queryForPartners(partners)
                 
             } else {
                 // Log details of the failure
@@ -46,6 +47,59 @@ class MessagesViewController: UITableViewController {
             }
         }
     }
+    
+    //this function querys for the partners you're conversing with, so we can utilize their names in the table cells
+    func queryForPartners(partnerIds : [NSString])
+    {
+        
+        var query = PFQuery(className: "User")
+        
+        var tempArrayOfObjects : [PFObject] = []
+        for partnerId in partnerIds
+        {
+            var partner: PFUser = PFUser.objectWithoutDataWithObjectId(partnerId as String)
+            //partner.objectForKey(partnerId as String)
+            //partner.objectId = partnerId as String
+            tempArrayOfObjects.append(partner)
+        }
+        PFUser.fetchAllInBackground(tempArrayOfObjects, block: { (objects, error) -> Void in
+            if error == nil {
+                // The find succeeded.
+                println("Successfully retrieved \(objects!.count) Users.")
+                self.usersForCells.removeAll(keepCapacity: false)
+                if let objects = objects as? [PFUser] {
+                    for object in objects {
+                        self.usersForCells.append(object)
+                    }
+                }
+                
+            } else {
+                // Log details of the failure
+                println("Error: \(error) \(error!.userInfo!)")
+            }
+            self.tableView.reloadData()
+        })
+    }
+    
+    //this function creates an array of Users that the user is messaging with
+    func setPartners() -> [NSString]
+    {
+        var partnerIds : [NSString] = []
+        for conversation in self.currentUserConversations
+        {
+            if(conversation["User1_ID"] as? String == PFUser.currentUser()!.objectId!)
+            {
+                partnerIds.append(conversation["User2_ID"] as! NSString)
+                
+            }
+            else if(conversation["User2_ID"] as? String == PFUser.currentUser()!.objectId!)
+            {
+                partnerIds.append(conversation["User1_ID"] as! NSString)
+            }
+        }
+        return partnerIds
+    }
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentUserConversations.count
