@@ -24,7 +24,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     var conversationUsers = [String: PFUser]() // Both users
     let currentUserId = PFUser.currentUser()?.objectId
     var conversationPartnerId : String! // The other conversation partner
-    var chatTimer: NSTimer!
+    var chatTimer: NSTimer?
     
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -44,8 +44,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     override func viewDidDisappear(animated: Bool) {
         //we want to stop the chat from refreshing once the view leaves
-        chatTimer?.invalidate()
-        chatTimer = nil
+        chatTimer!.invalidate()
     }
     
     func chatRefresh()
@@ -95,6 +94,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         partnerQuery?.getObjectInBackgroundWithId(conversationPartnerId, block: { (partner, error) -> Void in
             if error == nil {
                 self.conversationUsers[self.conversationPartnerId] = (partner as! PFUser)
+                self.tableView.reloadData()
             }
             else {
                 println("Error: \(error) \(error!.userInfo!)")
