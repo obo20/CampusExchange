@@ -70,12 +70,9 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
             conversationPartnerId = listingObject["UserId"] as? String
             
             // Need to get conversationId from the listing
-            var query1 = PFQuery(className:"Conversation")
-            var query2 = PFQuery(className:"Conversation")
-            query1.whereKey("Listing_ID", equalTo:listingObject.objectId!)
-            query1.whereKey("User1_ID", equalTo:currentUserId!)
-            query2.whereKey("User2_ID", equalTo:currentUserId!)
-            var query = PFQuery.orQueryWithSubqueries([query1, query2])
+            var query = PFQuery(className:"Conversation")
+            query.whereKey("Listing_ID", equalTo:listingObject.objectId!)
+            query.whereKey("User1_ID", equalTo:currentUserId!)
             query.getFirstObjectInBackgroundWithBlock { (conversation, error) -> Void in
                 if error == nil {
                     // The find succeeded.

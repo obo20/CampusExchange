@@ -50,7 +50,6 @@ class ListingsViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myListingsCell", forIndexPath: indexPath) as! UITableViewCell
         
-        // Just testing this condition out
         if currentUserListings[indexPath.row]["ListingStatus"] as? Int != 1 {
             cell.textLabel?.textColor = UIColor.redColor()
         }
@@ -72,11 +71,6 @@ class ListingsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("myListingsToEditListing", sender: nil)
-    }
-    
-    @IBAction func LogOut(sender: UIBarButtonItem) {
-        PFUser.logOut()
-        self.navigationController?.tabBarController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
