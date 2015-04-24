@@ -1960,7 +1960,7 @@
             </objects>
             <point key="canvasLocation" x="2124" y="1677"/>
         </scene>
-        <!--My Conversations-->
+        <!--My Listing Conversations-->
         <scene sceneID="O5K-yV-8c8">
             <objects>
                 <tableViewController id="SWH-Vu-0vu" customClass="MessagesViewController" customModule="CampusExchange" customModuleProvider="target" sceneMemberID="viewController">
@@ -1981,7 +1981,7 @@
                             <outlet property="delegate" destination="SWH-Vu-0vu" id="FDQ-eS-V86"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Conversations" id="VFm-rm-YZK"/>
+                    <navigationItem key="navigationItem" title="My Listing Conversations" id="VFm-rm-YZK"/>
                     <connections>
                         <segue destination="vvg-ga-KW1" kind="show" identifier="messagesToConversation" id="PXB-Qc-96O"/>
                     </connections>
@@ -2162,7 +2162,7 @@
         <scene sceneID="s56-Ax-IVI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c8e-dh-Nik" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Messages" image="Chat Filled-32.png" selectedImage="Search-32.png" id="ZZc-qx-e4H"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="Chat Filled-32.png" id="ZZc-qx-e4H"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sew-Oz-pkK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

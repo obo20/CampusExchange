@@ -24,7 +24,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         emailField.delegate = self
         passwordField.delegate = self
         emailField.text = currentUser?.email
-        passwordField.text = "****"
+        passwordField.text = ""
     }
     
     @IBAction func update() {

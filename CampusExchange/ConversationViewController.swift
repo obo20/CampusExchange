@@ -33,6 +33,8 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let title = self.conversationObject["Listing_Title"] as! NSString
+        self.title = ("Chatting about: \(title)")
         messageField.delegate = self
         //notifications that the keyboard is going up or down
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
