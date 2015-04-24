@@ -14,7 +14,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameField : UITextField!
     @IBOutlet weak var emailField : UITextField!
-    @IBOutlet weak var phoneNumberField : UITextField!
     @IBOutlet weak var passwordField : UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     
@@ -26,7 +25,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         usernameField.delegate = self
         emailField.delegate = self
-        phoneNumberField.delegate = self
         passwordField.delegate = self
         confirmPasswordField.delegate = self
     }
@@ -34,11 +32,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signUp() {
         let username = self.usernameField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         let email = self.emailField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
-        let phoneNumber = self.phoneNumberField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         let password = self.passwordField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         let confirmPassword = self.confirmPasswordField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         
-        if (username.length == 0 || email.length == 0 || phoneNumber.length == 0 || password.length == 0 || confirmPassword.length == 0) {
+        if (username.length == 0 || email.length == 0 || password.length == 0 || confirmPassword.length == 0) {
             //one of the fields was left blank, so we need to display an alert telling the user to fill in all fields
             var alert = UIAlertController(title: "Missing Fields!", message: "Please be sure to fill in every field to sign up.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
@@ -55,7 +52,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             user.username = username as String
             user.password = password as String
             user.email = email as String
-            user["phoneNumber"] = phoneNumber
             
             user.signUpInBackgroundWithBlock { (succeeded, error) -> Void in
                 if (error == nil || succeeded == true) {

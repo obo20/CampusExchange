@@ -45,7 +45,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func forgotPassword() {
         var alert = UIAlertController(title: "Forgot Password?", message: "Enter your email to have a password reset link sent to you.", preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-            textField.text = "Email address"
+            textField.text = ""
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Reset Password", style: .Default, handler: { (action) -> Void in

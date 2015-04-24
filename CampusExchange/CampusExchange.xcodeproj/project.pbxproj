@@ -35,6 +35,7 @@
 		CEBF66C11AB4C338004FB37D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66C01AB4C338004FB37D /* LoginViewController.swift */; };
 		CEBF66C31AB4C346004FB37D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */; };
 		CEDFD5C11AB4F8CD0008EDEC /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD5C01AB4F8CD0008EDEC /* ListingViewController.swift */; };
+		CEF780AF1AE9FB4C005AA404 /* Chat Filled-32.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF780AE1AE9FB4C005AA404 /* Chat Filled-32.png */; };
 		DA1891241AE745DE0027A205 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1891231AE745DE0027A205 /* TabBarController.swift */; };
 		DA53BD4B1AE83171008B01EB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA53BD4A1AE83171008B01EB /* SettingsViewController.swift */; };
 		DA5FA5BC1AE30789009A72C9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5FA5BA1AE30789009A72C9 /* Bolts.framework */; };
@@ -85,6 +86,7 @@
 		CEBF66C01AB4C338004FB37D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEBF66C21AB4C346004FB37D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CEDFD5C01AB4F8CD0008EDEC /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
+		CEF780AE1AE9FB4C005AA404 /* Chat Filled-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chat Filled-32.png"; sourceTree = "<group>"; };
 		DA1891231AE745DE0027A205 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DA53BD4A1AE83171008B01EB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DA5FA5BA1AE30789009A72C9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1F03AC1AB515770065197D /* Search-32.png */,
+				CEF780AE1AE9FB4C005AA404 /* Chat Filled-32.png */,
 				CE1F03AE1AB516A80065197D /* Tails-32.png */,
 			);
 			name = Images;
@@ -304,6 +307,7 @@
 				CE1F03AF1AB516A80065197D /* Tails-32.png in Resources */,
 				CE1F03AD1AB515770065197D /* Search-32.png in Resources */,
 				CEBF66851AB3DDD5004FB37D /* Main.storyboard in Resources */,
+				CEF780AF1AE9FB4C005AA404 /* Chat Filled-32.png in Resources */,
 				CEBF668A1AB3DDD5004FB37D /* LaunchScreen.xib in Resources */,
 				CEBF66871AB3DDD5004FB37D /* Images.xcassets in Resources */,
 			);
