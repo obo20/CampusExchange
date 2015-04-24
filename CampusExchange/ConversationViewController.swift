@@ -32,12 +32,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if conversationObject != nil {
-            let title = conversationObject["Listing_Title"] as? String
-            self.title = ("Chatting about: \(title!)")
-        } else {
-            self.title = ("Start a new chat!")
-        }
         messageField.delegate = self
         //notifications that the keyboard is going up or down
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
@@ -61,13 +55,27 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         
         conversationUsers[currentUserId!] = PFUser.currentUser()
         
+        if conversationObject != nil {
+            let title = conversationObject["Listing_Title"] as? String
+            self.title = ("Chatting about: \(title!)")
+        } else if listingObject != nil {
+            let title = listingObject["Title"] as? String
+            self.title = ("Chatting about: \(title!)")
+        } else {
+            self.title = ("Start a chat!")
+        }
+        
         if listingObject != nil {
             // Coming from ListingController
             conversationPartnerId = listingObject["UserId"] as? String
             
             // Need to get conversationId from the listing
-            var query = PFQuery(className:"Conversation")
-            query.whereKey("Listing_ID", equalTo:listingObject.objectId!)
+            var query1 = PFQuery(className:"Conversation")
+            var query2 = PFQuery(className:"Conversation")
+            query1.whereKey("Listing_ID", equalTo:listingObject.objectId!)
+            query1.whereKey("User1_ID", equalTo:currentUserId!)
+            query2.whereKey("User2_ID", equalTo:currentUserId!)
+            var query = PFQuery.orQueryWithSubqueries([query1, query2])
             query.getFirstObjectInBackgroundWithBlock { (conversation, error) -> Void in
                 if error == nil {
                     // The find succeeded.

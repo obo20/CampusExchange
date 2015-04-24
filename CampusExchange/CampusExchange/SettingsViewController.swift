@@ -30,17 +30,23 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func update() {
         
         let email = self.emailField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
-        let phoneNumber = self.passwordField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
+        let password = self.passwordField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as NSString
         
-        if (email.length == 0 || phoneNumber.length == 0) {
-            var alert = UIAlertController(title: "Invalid Fields!", message: "You cannot leave any of these fields blank.", preferredStyle: UIAlertControllerStyle.Alert)
+        if (email.length == 0 && password.length == 0) {
+            var alert = UIAlertController(title: "Invalid Fields!", message: "You cannot leave both of these fields blank.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else if email == currentUser?.email && password.length == 0 {
+            var alert = UIAlertController(title: "Error!", message: "There is nothing new to update.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
-            
-            currentUser?.email = email as? String
-            currentUser!["password"] = phoneNumber as? String
-            
+            if email.length > 0 && currentUser?.email != email {
+                currentUser?.email = email as? String
+            }
+            if password.length > 0 {
+                currentUser!["password"] = password as? String
+            }
             currentUser?.saveInBackgroundWithBlock({ (success, error) -> Void in
                 if (success) {
                     var alert = UIAlertController(title: "Success", message: "Your information has been updated.", preferredStyle: UIAlertControllerStyle.Alert)
