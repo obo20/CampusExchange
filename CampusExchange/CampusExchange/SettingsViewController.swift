@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
@@ -21,6 +21,8 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.delegate = self
+        phoneNumberField.delegate = self
         emailField.text = currentUser?.email
         phoneNumberField.text = currentUser!["phoneNumber"] as! String
     }
@@ -63,5 +65,18 @@ class SettingsViewController: UIViewController {
         PFUser.logOut()
         self.navigationController?.tabBarController?.dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
+    // MARK: KEYBOARD CONTROLS
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if (textField.text.isEmpty)
+        {
+            return false
+        }
+        return true
+    }
 }

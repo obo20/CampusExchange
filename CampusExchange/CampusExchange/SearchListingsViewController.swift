@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class SearchListingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchListingsViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     var searchResults: [PFObject] = []
@@ -25,6 +25,10 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleField.delegate = self
+        authorField.delegate = self
+        ISBNField.delegate = self
+        courseField.delegate = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "searchResultCell")
     }
     
@@ -82,6 +86,22 @@ class SearchListingsViewController: UIViewController, UITableViewDelegate, UITab
             }
         }
     }
+    
+    // MARK: KEYBOARD CONTROLS
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if (textField.text.isEmpty)
+        {
+            return false
+        }
+        return true
+    }
+    
+    // MARK: Table Methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.searchResults.count;

@@ -14,7 +14,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     var listingObject : PFObject! // !nil if coming from listing controller, nil otherwise
     var conversationObject : PFObject! // !nil if coming from message controller, nil otherwise
@@ -128,6 +127,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         var indexPath = NSIndexPath(forRow: (messagesArray.count - 1), inSection: 0)
         self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
     }
+    
     // MARK: KEYBOARD CONTROLS
     func textFieldDidEndEditing(textField: UITextField) {
         textField.resignFirstResponder()
@@ -144,7 +144,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     func keyboardWasShown(notification: NSNotification)
     {
-        NSLog("hi")
         let info: NSDictionary = notification.userInfo!
         let keyboardSize: CGSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue().size as CGSize!
         self.view.frame.origin.y -= (keyboardSize.height - 49)
@@ -152,7 +151,6 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
     
     func keyboardWillBeHidden(notification: NSNotification)
     {
-        NSLog("hi")
         let info: NSDictionary = notification.userInfo!
         let keyboardSize: CGSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue().size as CGSize!
         self.view.frame.origin.y = 0//(keyboardSize.height - 49)
@@ -196,6 +194,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate, UITable
         var conversation = PFObject(className:"Conversation")
         conversation["Listing_ID"] = self.listingObject.objectId
         conversation["User1_ID"] = self.currentUserId
+        conversation["Listing_Title"] = self.listingObject["Title"]
         conversation["User2_ID"] = self.conversationPartnerId
         
         conversation.saveInBackgroundWithBlock { (success, error) -> Void in

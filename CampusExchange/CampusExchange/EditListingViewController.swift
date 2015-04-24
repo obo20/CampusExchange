@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class EditListingViewController: UIViewController {
+class EditListingViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var titleField : UITextField!
     @IBOutlet weak var authorField : UITextField!
@@ -27,7 +27,12 @@ class EditListingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        titleField.delegate = self
+        authorField.delegate = self
+        ISBNField.delegate = self
+        courseField.delegate = self
+        conditionField.delegate = self
+        priceField.delegate = self
         self.titleField.text = listingObject["Title"] as? String
         self.authorField.text = listingObject["Author"] as? String
         self.ISBNField.text = listingObject["ISBN"] as? String
@@ -73,5 +78,19 @@ class EditListingViewController: UIViewController {
             self.navigationController?.popToRootViewControllerAnimated(true)
         }))
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: KEYBOARD CONTROLS
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if (textField.text.isEmpty)
+        {
+            return false
+        }
+        return true
     }
 }

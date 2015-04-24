@@ -10,11 +10,17 @@ import Foundation
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameField : UITextField!
     @IBOutlet weak var passwordField : UITextField!
     
+    
+    override func viewDidLoad()
+    {
+        usernameField.delegate = self
+        passwordField.delegate = self
+    }
     //sets the fields to blank after logging out
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,6 +47,7 @@ class LoginViewController: UIViewController {
         alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
             textField.text = "Email address"
         })
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Reset Password", style: .Default, handler: { (action) -> Void in
             let emailField = alert.textFields![0] as! UITextField
             if !emailField.text.isEmpty {
@@ -93,5 +100,19 @@ class LoginViewController: UIViewController {
                 }
             })
         }
+    }
+    
+    // MARK: KEYBOARD CONTROLS
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if (textField.text.isEmpty)
+        {
+            return false
+        }
+        return true
     }
 }

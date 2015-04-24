@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameField : UITextField!
     @IBOutlet weak var emailField : UITextField!
@@ -24,6 +24,11 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameField.delegate = self
+        emailField.delegate = self
+        phoneNumberField.delegate = self
+        passwordField.delegate = self
+        confirmPasswordField.delegate = self
     }
     
     @IBAction func signUp() {
@@ -66,5 +71,19 @@ class SignUpViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    // MARK: KEYBOARD CONTROLS
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if (textField.text.isEmpty)
+        {
+            return false
+        }
+        return true
     }
 }
